@@ -214,6 +214,36 @@ layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_3dxm6")
 text = "BOOK"
 
+[node name="TextEditor" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 436.0
+offset_right = 811.0
+offset_bottom = 454.0
+metadata/_edit_group_ = true
+
+[node name="Panel" type="Panel" parent="TextEditor"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextEdit" type="TextEdit" parent="TextEditor"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -173.5
+offset_top = -212.0
+offset_right = 174.5
+offset_bottom = 211.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [connection signal="pressed" from="CypherBook/Background/NextPage/Button" to="CypherBook" method="_on_next_page_pressed"]
 [connection signal="pressed" from="CypherBook/Background/PrevPage/Button" to="CypherBook" method="_on_back_page_pressed"]
 [connection signal="pressed" from="CypherBook/Background/CloseBook/Button" to="CypherBook" method="_on_button_pressed"]
