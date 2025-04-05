@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cpt3skq058fdp"]
+[gd_scene load_steps=4 format=3 uid="uid://cpt3skq058fdp"]
 
 [ext_resource type="FontFile" uid="uid://cqxhyfpnilyy0" path="res://addons/google_fonts/Silkscreen/Silkscreen-Regular.ttf" id="1_dn62s"]
+[ext_resource type="Script" path="res://scripts/ui/answer_popup.gd" id="1_dn62t"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dn62s"]
 
@@ -8,6 +9,7 @@
 offset_right = 431.0
 offset_bottom = 40.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_dn62s")
+script = ExtResource("1_dn62t")
 
 [node name="SubmitButton" type="Button" parent="."]
 layout_mode = 1

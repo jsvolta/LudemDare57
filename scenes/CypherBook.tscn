@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://dkyrv4q16lrvq"]
 
 [ext_resource type="Script" uid="uid://co21kwytkdlx4" path="res://scripts/cypher_book.gd" id="1_xc2ce"]
-[ext_resource type="Script" uid="uid://divsiqdwkeoj0" path="res://scenes/text_edit.gd" id="2_wrea6"]
+[ext_resource type="Script" path="res://scenes/text_edit.gd" id="2_wrea6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uu6xs"]
 bg_color = Color(0.282353, 0.745098, 0, 1)
