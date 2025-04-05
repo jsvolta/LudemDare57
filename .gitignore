@@ -1,0 +1,13 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+
+# Taken from https://gist.github.com/hmans/78c056f26e3df52abe755163eb4b7ea5
+# Export artefacts
+/_export/
+
+# Temporary files we don't want to version-control
+*.blend1
+
+.vscode/
