@@ -1,0 +1,100 @@
+[gd_scene load_steps=5 format=3 uid="uid://c07bnrbwg8vv8"]
+
+[ext_resource type="Script" uid="uid://dw88b1cp7g8l6" path="res://scripts/ui/ui.gd" id="1_ad1um"]
+[ext_resource type="FontFile" uid="uid://cxf2llnuowy87" path="res://addons/google_fonts/Iceberg/Iceberg-Regular.ttf" id="2_5m6gs"]
+[ext_resource type="Texture2D" uid="uid://5v7igdr0c1bu" path="res://assets/background.png" id="3_8j3t6"]
+[ext_resource type="Script" uid="uid://d151x20yf2sob" path="res://scripts/answer_input.gd" id="4_pf8af"]
+
+[node name="TutorialLevel1" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(640, 360)
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+scale = Vector2(2, 2)
+texture = ExtResource("3_8j3t6")
+
+[node name="UI" type="Control" parent="." node_paths=PackedStringArray("cypher_text_button", "answer_panel")]
+z_index = 5
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ad1um")
+cypher_text_button = NodePath("CypherText")
+answer_panel = NodePath("AnswerPanel")
+
+[node name="CypherText" type="Button" parent="UI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -239.0
+offset_right = 239.0
+offset_bottom = 67.0
+grow_horizontal = 2
+tooltip_text = "Open answer window"
+theme_override_fonts/font = ExtResource("2_5m6gs")
+theme_override_font_sizes/font_size = 48
+text = "Zbu vu kpzjv tvkl. Vvwz!"
+flat = true
+
+[node name="AnswerPanel" type="Panel" parent="UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -180.0
+offset_right = 320.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnswerInput" type="TextEdit" parent="UI/AnswerPanel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -256.0
+offset_top = -92.0
+offset_right = 128.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 24
+placeholder_text = "Enter answer"
+script = ExtResource("4_pf8af")
+
+[node name="Button" type="Button" parent="UI/AnswerPanel"]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 268.0
+offset_right = 576.0
+offset_bottom = 332.0
+theme_override_font_sizes/font_size = 24
+text = "Submit"
+
+[node name="Label" type="Label" parent="UI/AnswerPanel"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 12.0
+offset_right = 576.0
+offset_bottom = 76.0
+theme_override_fonts/font = ExtResource("2_5m6gs")
+theme_override_font_sizes/font_size = 48
+text = "Zbu vu kpzjv tvkl. Vvwz!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="button_down" from="UI/CypherText" to="UI" method="_on_button_button_down"]
