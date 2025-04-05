@@ -1,0 +1,15 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://blfo2fyjlntv"
+valid=false
+
+[deps]
+
+source_file="res://data/level_data.csv"
+
+[params]
+
+compress=true
+delimiter=0
