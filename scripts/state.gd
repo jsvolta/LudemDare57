@@ -16,6 +16,7 @@ var max_level: int = 5
 
 func _ready() -> void:
 	self.level_data = _load_keys()
+	self.level_data.shuffle();
 	update_current_level_data()
 
 func update_current_level_data() -> void:
