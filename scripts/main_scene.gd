@@ -2,6 +2,9 @@ extends Node2D
 
 signal cypher_changed(new_text)
 
+@onready var answer_popup = $UI/AnswerPopup
+@onready var cypher_text = $UI/CypherText
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var text = caesar_cipher(State.current_level_data[0]) # Apply cipher before emitting
@@ -15,9 +18,20 @@ func _ready() -> void:
 		_:
 			background_scene = load("res://scenes/backgrounds/level_1.tscn")
 
-
 	var background_instance = background_scene.instantiate()
 	add_child(background_instance)
+	
+	# Connect answer submission signal
+	answer_popup.answer_submitted.connect(_on_answer_submitted)
+
+func _on_answer_submitted(answer: String) -> void:
+	# Check if answer matches the original unciphered text
+	if answer.to_upper() == State.current_level_data[0].to_upper():
+		print("Correct answer!")
+		# TODO: Handle correct answer (next level, etc.)
+	else:
+		print("Wrong answer!")
+		cypher_text.shake()
 
 func caesar_cipher(text: String, shift: int = 5) -> String:
 	var result = ""
