@@ -46,4 +46,7 @@ offset_right = 215.5
 offset_bottom = 104.0
 grow_horizontal = 2
 
+[node name="CypherBook" parent="." instance=ExtResource("5_gubc5")]
+position = Vector2(227, 205)
+
 [connection signal="cypher_changed" from="." to="UI/CypherText" method="_on_main_scene_cypher_changed"]
