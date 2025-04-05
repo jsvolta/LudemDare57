@@ -9,10 +9,14 @@ const background_1 = preload("res://scenes/backgrounds/level_1.tscn")
 var level_data: Array
 var current_level_data: Array
 
+# TODO: clamp level_index
 var level_index: int = 1
 
 func _ready() -> void:
 	self.level_data = _load_keys()
+	update_current_level_data()
+
+func update_current_level_data() -> void:
 	self.current_level_data = level_data[level_data.find_custom(_is_current_level.bind())]
 
 func _load_keys():

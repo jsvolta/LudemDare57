@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c01w5qw4qjcg7" path="res://scripts/main_scene.gd" id="1_w2twt"]
 [ext_resource type="FontFile" uid="uid://cxf2llnuowy87" path="res://addons/google_fonts/Iceberg/Iceberg-Regular.ttf" id="2_7ykc4"]
-[ext_resource type="Script" path="res://scripts/ui/cypher_text.gd" id="3_pu3yx"]
+[ext_resource type="Script" uid="uid://bep8eqbw1tjpa" path="res://scripts/ui/cypher_text.gd" id="3_pu3yx"]
 [ext_resource type="PackedScene" uid="uid://cpt3skq058fdp" path="res://scenes/ui/answer_popup.tscn" id="4_pu3yx"]
 [ext_resource type="PackedScene" uid="uid://dkyrv4q16lrvq" path="res://scenes/CypherBook.tscn" id="5_gubc5"]
 
