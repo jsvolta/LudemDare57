@@ -21,8 +21,10 @@ func _load_level():
 
 	match State.level_index:
 		# FIXME: this is temp
-		_:
+		1:
 			background = State.background_1.instantiate()
+		_:
+			background = State.background_2.instantiate()
 
 	add_child(background)
 	

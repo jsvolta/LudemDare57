@@ -1,6 +1,7 @@
 extends Node2D
 
 const background_1 = preload("res://scenes/backgrounds/level_1.tscn")
+const background_2 = preload("res://scenes/backgrounds/level_2.tscn")
 
 # Sub array layout
 # 0 -> key
