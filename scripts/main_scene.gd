@@ -17,15 +17,14 @@ func _load_level():
 	cypher_changed.emit(text)
 	# NOTE: preload is on compile time and load is at runtime
 	# this should probably be preloaded but it doesn't work with an array
-	var background_scene;
+	var background;
 
 	match State.level_index:
 		# FIXME: this is temp
 		_:
-			background_scene = State.background_1
+			background = State.background_1.instantiate()
 
-	var background_instance = background_scene.instantiate()
-	add_child(background_instance)
+	add_child(background)
 	
 
 func _on_answer_submitted(answer: String) -> void:
