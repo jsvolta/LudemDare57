@@ -1,0 +1,85 @@
+[gd_scene load_steps=3 format=3 uid="uid://6nurhno1l5kg"]
+
+[ext_resource type="Script" uid="uid://dw88b1cp7g8l6" path="res://scripts/ui/ui.gd" id="1_f5cxw"]
+[ext_resource type="FontFile" uid="uid://cxf2llnuowy87" path="res://addons/google_fonts/Iceberg/Iceberg-Regular.ttf" id="2_aac20"]
+
+[node name="UI" type="Control" node_paths=PackedStringArray("cypher_text_button", "answer_panel", "cypher_text_label")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f5cxw")
+cypher_text_button = NodePath("CypherText")
+answer_panel = NodePath("AnswerPanel")
+cypher_text_label = NodePath("AnswerPanel/CypherTextLabel")
+
+[node name="CypherText" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -239.0
+offset_right = 239.0
+offset_bottom = 67.0
+grow_horizontal = 2
+tooltip_text = "Open answer window"
+theme_override_fonts/font = ExtResource("2_aac20")
+theme_override_font_sizes/font_size = 48
+text = "Placeholder"
+flat = true
+
+[node name="AnswerPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -180.0
+offset_right = 320.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnswerInput" type="TextEdit" parent="AnswerPanel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -256.0
+offset_top = -92.0
+offset_right = 128.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 24
+placeholder_text = "Enter answer"
+
+[node name="SubmitButton" type="Button" parent="AnswerPanel"]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 268.0
+offset_right = 576.0
+offset_bottom = 332.0
+theme_override_font_sizes/font_size = 24
+text = "Submit"
+
+[node name="CypherTextLabel" type="Label" parent="AnswerPanel"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 12.0
+offset_right = 576.0
+offset_bottom = 76.0
+theme_override_fonts/font = ExtResource("2_aac20")
+theme_override_font_sizes/font_size = 48
+text = "Placeholder"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="button_down" from="CypherText" to="." method="_on_button_button_down"]
+[connection signal="focus_exited" from="AnswerPanel/AnswerInput" to="." method="_on_answer_input_focus_exited"]

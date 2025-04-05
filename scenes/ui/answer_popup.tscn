@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpt3skq058fdp"]
+
+[ext_resource type="FontFile" uid="uid://cqxhyfpnilyy0" path="res://addons/google_fonts/Silkscreen/Silkscreen-Regular.ttf" id="1_dn62s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dn62s"]
+
+[node name="AnswerPopup" type="Panel"]
+offset_right = 431.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_dn62s")
+
+[node name="SubmitButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -63.0
+offset_right = 1.0
+offset_bottom = 40.0
+grow_horizontal = 0
+text = "Submit"
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_right = 360.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("1_dn62s")
+theme_override_font_sizes/font_size = 18
+placeholder_text = "Enter decrypted message"
