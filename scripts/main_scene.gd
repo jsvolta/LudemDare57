@@ -22,7 +22,7 @@ func _load_level():
 	match State.level_index:
 		# FIXME: this is temp
 		_:
-			background_scene = load("res://scenes/backgrounds/level_1.tscn")
+			background_scene = State.background_1
 
 	var background_instance = background_scene.instantiate()
 	add_child(background_instance)
@@ -32,7 +32,6 @@ func _on_answer_submitted(answer: String) -> void:
 	# Check if answer matches the original unciphered text
 	if answer.to_upper() == State.current_level_data[0].to_upper():
 		print("Correct answer!")
-		# TODO: Handle correct answer (next level, etc.)
 		State.level_index += 1
 		_load_level()
 	else:
