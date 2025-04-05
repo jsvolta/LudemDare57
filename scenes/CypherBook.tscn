@@ -243,6 +243,7 @@ offset_right = 174.5
 offset_bottom = 211.0
 grow_horizontal = 2
 grow_vertical = 2
+placeholder_text = "Write something here!"
 
 [connection signal="pressed" from="CypherBook/Background/NextPage/Button" to="CypherBook" method="_on_next_page_pressed"]
 [connection signal="pressed" from="CypherBook/Background/PrevPage/Button" to="CypherBook" method="_on_back_page_pressed"]
