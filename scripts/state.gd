@@ -7,7 +7,14 @@ const background_2 = preload("res://scenes/backgrounds/level_2.tscn")
 # 0 -> key
 # 1 -> end message
 # 2 -> level index
-var level_data: Array
+var level_data = [
+["Bubble Wrap SOS","Bubble wrap SOS! We require immediate popping assistance. Your mission is loud and clear.",1],
+["More Cats Please","Greetings, Earthling. Your planet hums with wonder. Especially the part about cats. More, please.",1],
+["Emoji Language","Languages are only spoken with thoughts, emojis may be more efficient!",2],
+["Colourful pictures","Your drawings were analyzed. Our scientists are baffled. Please continue. You may be the key.",3],
+["A missing voice",	"You were never alone. You just forgot how to listen. The universe missed your voice.",4],
+["Questions and voices","You are the conversation. You are the question and the key. We hear you. And now… you hear us too.",5]
+]
 var current_level_data: Array
 
 # TODO: clamp level_index
@@ -15,25 +22,13 @@ var level_index: int = 1
 var max_level: int = 5
 
 func _ready() -> void:
-	self.level_data = _load_keys()
 	self.level_data.shuffle();
 	update_current_level_data()
 
 func update_current_level_data() -> void:
 	self.current_level_data = level_data[level_data.find_custom(_is_current_level.bind())]
 
-func _load_keys():
-	var result = Array()
-	var file = FileAccess.open("res://data/messages.csv", FileAccess.READ)
-	var content = file.get_as_text()
-	for level in content.split("\n"):
-		var data = level.strip_escapes().split("|")
-		if level.length() > 0:
-			# TODO: determine if you need to cast data[2] to int
-			result.append(data)
-	return result
-
 func _is_current_level(data: Array) -> bool:
-	if (data[2] == str(State.level_index)):
+	if (data[2] == State.level_index):
 		return true;
 	return false;
