@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://dl0jgscwwhnxw"
+
+[deps]
+
+files=["res://data/messages.Bubble wrap SOS! We require immediate popping assistance. Your mission is loud and clear..translation", "res://data/messages.1.translation"]
+
+source_file="res://data/messages.csv"
+dest_files=["res://data/messages.Bubble wrap SOS! We require immediate popping assistance. Your mission is loud and clear..translation", "res://data/messages.1.translation"]
+
+[params]
+
+compress=true
+delimiter=0
