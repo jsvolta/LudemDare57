@@ -3,11 +3,13 @@
 importer="csv_translation"
 type="Translation"
 uid="uid://blfo2fyjlntv"
-valid=false
 
 [deps]
 
+files=["res://data/level_data. message.translation", "res://data/level_data. level.translation"]
+
 source_file="res://data/level_data.csv"
+dest_files=["res://data/level_data. message.translation", "res://data/level_data. level.translation"]
 
 [params]
 
