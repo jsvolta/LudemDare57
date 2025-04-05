@@ -26,12 +26,16 @@ func _load_level():
 
 	add_child(background)
 	
+func _end_game():
+	get_tree().change_scene_to_file("res://scenes/ui/end_screen.tscn") 
 
 func _on_answer_submitted(answer: String) -> void:
 	# Check if answer matches the original unciphered text
 	if answer.to_upper() == State.current_level_data[0].to_upper():
 		print("Correct answer!")
 		State.level_index += 1
+		if (State.level_index > State.max_level):
+			_end_game();
 		_load_level()
 	else:
 		print("Wrong answer!")

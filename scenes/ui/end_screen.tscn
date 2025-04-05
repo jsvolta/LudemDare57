@@ -1,0 +1,87 @@
+[gd_scene load_steps=3 format=3 uid="uid://dayp7hg10amxv"]
+
+[ext_resource type="Script" uid="uid://do3ckgmtilqa3" path="res://scripts/ui/end_screen.gd" id="1_n8r4t"]
+[ext_resource type="FontFile" uid="uid://cxf2llnuowy87" path="res://addons/google_fonts/Iceberg/Iceberg-Regular.ttf" id="2_wgyui"]
+
+[node name="EndScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n8r4t")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0588235, 0.0588235, 0.109804, 1)
+
+[node name="Stars" type="CPUParticles2D" parent="."]
+position = Vector2(640, 360)
+amount = 300
+lifetime = 8.0
+preprocess = 8.0
+emission_shape = 3
+emission_rect_extents = Vector2(640, 360)
+direction = Vector2(0, 1)
+spread = 10.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 30.0
+scale_amount_max = 3.0
+color = Color(1, 1, 1, 0.7)
+
+[node name="FastStars" type="CPUParticles2D" parent="."]
+position = Vector2(640, 360)
+amount = 50
+lifetime = 4.0
+preprocess = 4.0
+emission_shape = 3
+emission_rect_extents = Vector2(640, 360)
+direction = Vector2(0, 1)
+spread = 5.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+color = Color(1, 1, 1, 0.9)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.3
+anchor_right = 0.5
+anchor_bottom = 0.3
+offset_left = -200.0
+offset_right = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_wgyui")
+theme_override_font_sizes/font_size = 64
+text = "The end!"
+horizontal_alignment = 1
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.7
+anchor_right = 0.5
+anchor_bottom = 0.7
+offset_left = -100.0
+offset_right = 100.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_wgyui")
+theme_override_font_sizes/font_size = 32
+text = "Quit"
+
+[connection signal="button_down" from="QuitButton" to="." method="_on_quit_button_button_down"]
