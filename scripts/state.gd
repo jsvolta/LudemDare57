@@ -53,7 +53,7 @@ var level_data = [
 		,5,".- / -- .. ... ... .. -. --. / ...- --- .. -.-. ."],
 	["Distant Memories"
 		,"You are not lost. You are unfolding. The cosmos leans closer when you begin to remember."
-		,5,"-.. .. ... - .- -. -.-. . / -- . -- --- .-. .. . ..."]
+		,5,"-.. .. ... - .- -. - / -- . -- --- .-. .. . ..."]
 ]
 var current_level_data: Array
 
