@@ -1,27 +1,42 @@
-[gd_scene load_steps=3 format=3 uid="uid://bq7cg10rfcxcf"]
+[gd_scene load_steps=5 format=3 uid="uid://bq7cg10rfcxcf"]
 
 [ext_resource type="Script" uid="uid://b3qvnprk4hcr8" path="res://scripts/alien_cyphers.gd" id="1_lbpqt"]
-[ext_resource type="StyleBox" uid="uid://daog0kpj5080b" path="res://assets/styleBoxes/book_page_style.tres" id="1_ryhl3"]
+[ext_resource type="Texture2D" uid="uid://b8pgdq5ed64nr" path="res://assets/sprites/Level3Cypher1.png" id="2_pdp6h"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lbpqt"]
+texture = ExtResource("2_pdp6h")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pdp6h"]
 
 [node name="AlienCyphers" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
 script = ExtResource("1_lbpqt")
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 0
-offset_right = 383.0
-offset_bottom = 490.0
-theme_override_styles/panel = ExtResource("1_ryhl3")
+[node name="CypherPage" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 340.0
+offset_bottom = 183.0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+[node name="Panel" type="Panel" parent="CypherPage"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_lbpqt")
+
+[node name="DraggableArea" type="Panel" parent="CypherPage"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 5046.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.035)
+theme_override_styles/panel = SubResource("StyleBoxEmpty_pdp6h")
+
+[connection signal="mouse_entered" from="CypherPage/DraggableArea" to="." method="_on_draggable_area_mouse_entered"]
+[connection signal="mouse_exited" from="CypherPage/DraggableArea" to="." method="_on_draggable_area_mouse_exited"]
