@@ -57,7 +57,7 @@ func _input(event):
 		if dragging:
 			newPosition = get_viewport().get_mouse_position() - drag_offset
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if dragging:
 		var target_position = get_global_mouse_position() - drag_offset
 		global_position = global_position.lerp(target_position, 0.8)

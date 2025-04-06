@@ -12,7 +12,7 @@ func _ready() -> void:
 func _on_submit_pressed() -> void:
 	_submit_answer()
 
-func _on_text_submitted(text: String) -> void:
+func _on_text_submitted(_text: String) -> void:
 	_submit_answer()
 
 func _submit_answer() -> void:
