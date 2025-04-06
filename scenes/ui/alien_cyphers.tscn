@@ -1,7 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bq7cg10rfcxcf"]
+[gd_scene load_steps=3 format=3 uid="uid://bq7cg10rfcxcf"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dxu4w"]
-bg_color = Color(0.458953, 0.481614, 0.695792, 1)
+[ext_resource type="Script" uid="uid://b3qvnprk4hcr8" path="res://scripts/alien_cyphers.gd" id="1_lbpqt"]
+[ext_resource type="StyleBox" uid="uid://daog0kpj5080b" path="res://assets/styleBoxes/book_page_style.tres" id="1_ryhl3"]
 
 [node name="AlienCyphers" type="Control"]
 layout_mode = 3
@@ -10,9 +10,18 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_lbpqt")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
-offset_right = 416.0
-offset_bottom = 535.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_dxu4w")
+offset_right = 383.0
+offset_bottom = 490.0
+theme_override_styles/panel = ExtResource("1_ryhl3")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
