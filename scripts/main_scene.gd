@@ -2,8 +2,6 @@ extends Node2D
 
 signal cypher_changed(new_text)
 
-
-
 @onready var answer_popup = $UI/AnswerPopup
 @onready var cypher_text = $UI/CypherText
 

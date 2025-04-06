@@ -47,9 +47,9 @@ offset_bottom = 104.0
 grow_horizontal = 2
 
 [node name="CypherBook" parent="UI" instance=ExtResource("5_gubc5")]
-offset_left = 227.0
-offset_top = 205.0
-offset_right = 227.0
-offset_bottom = 205.0
+offset_left = 178.0
+offset_top = 185.0
+offset_right = 178.0
+offset_bottom = 185.0
 
 [connection signal="cypher_changed" from="." to="UI/CypherText" method="_on_main_scene_cypher_changed"]
