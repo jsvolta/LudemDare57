@@ -1,8 +1,8 @@
 [gd_scene load_steps=15 format=3 uid="uid://dkyrv4q16lrvq"]
 
 [ext_resource type="Script" uid="uid://co21kwytkdlx4" path="res://scripts/cypher_book.gd" id="1_xc2ce"]
-[ext_resource type="Script" uid="uid://bh8vv0fids844" path="res://scenes/ui/book_cutout.gd" id="2_cutb7"]
-[ext_resource type="Script" uid="uid://ccwk577th7m4i" path="res://scenes/ui/sub_viewport.gd" id="2_e33h0"]
+[ext_resource type="Script" uid="uid://bh8vv0fids844" path="res://scripts/book_cutout.gd" id="2_cutb7"]
+[ext_resource type="Script" uid="uid://ccwk577th7m4i" path="res://scripts/sub_viewport.gd" id="2_e33h0"]
 [ext_resource type="StyleBox" uid="uid://daog0kpj5080b" path="res://assets/styleBoxes/book_page_style.tres" id="4_5nicn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uu6xs"]
