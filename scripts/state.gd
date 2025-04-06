@@ -52,8 +52,8 @@ var level_data = [
 		,"You were never alone. You just forgot how to listen. The universe missed your voice."
 		,5,".- / -- .. ... ... .. -. --. / ...- --- .. -.-. ."],
 	["Distance Memories"
-		,"-.. .. ... - .- -. -.-. . / -- . -- --- .-. .. . ..."
-		,5,"You are not lost. You are unfolding. The cosmos leans closer when you begin to remember."]
+		,"You are not lost. You are unfolding. The cosmos leans closer when you begin to remember."
+		,5,"-.. .. ... - .- -. -.-. . / -- . -- --- .-. .. . ..."]
 ]
 var current_level_data: Array
 
