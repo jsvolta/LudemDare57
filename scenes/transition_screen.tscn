@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bckcgwlht1xiy"]
 
-[ext_resource type="Script" path="res://scripts/transition_screen.gd" id="1_12c8c"]
+[ext_resource type="Script" uid="uid://p3hinq7osmxp" path="res://scripts/transition_screen.gd" id="1_12c8c"]
 
 [sub_resource type="Animation" id="Animation_12c8c"]
 length = 0.001
@@ -19,7 +19,6 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_g3du7"]
 resource_name = "fade_to_black"
-length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -35,7 +34,6 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_jweab"]
 resource_name = "fade_to_normal"
-length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -72,3 +70,4 @@ color = Color(0, 0, 0, 1)
 libraries = {
 &"": SubResource("AnimationLibrary_jrk67")
 }
+speed_scale = 1.25
