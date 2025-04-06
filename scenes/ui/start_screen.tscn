@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqoaewg2xlej4"]
+[gd_scene load_steps=5 format=3 uid="uid://bqoaewg2xlej4"]
 
 [ext_resource type="Script" uid="uid://by1ihi5qnr4mc" path="res://scripts/ui/start_screen.gd" id="1_8k4yt"]
 [ext_resource type="FontFile" uid="uid://cxf2llnuowy87" path="res://addons/google_fonts/Iceberg/Iceberg-Regular.ttf" id="2_7ykc4"]
 [ext_resource type="AudioStream" uid="uid://doqbb2qekt45a" path="res://assets/music/start_menu_music.wav" id="3_ihgl4"]
+[ext_resource type="AudioStream" uid="uid://b255pileaafqr" path="res://assets/sound/startgame.mp3" id="4_ihgl4"]
 
 [node name="StartScreen" type="Control"]
 layout_mode = 3
@@ -85,10 +86,13 @@ theme_override_fonts/font = ExtResource("2_7ykc4")
 theme_override_font_sizes/font_size = 32
 text = "Start Mission"
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_ihgl4")
 volume_db = -12.0
 autoplay = true
 bus = &"Music"
+
+[node name="StartSoundPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ihgl4")
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
