@@ -2,7 +2,7 @@ extends Node3D
 
 const SCROLL_SPEED = 2.0
 const TILT_ANGLE = -50.0
-const MAX_DISTANCE = 40.0  
+const MAX_DISTANCE = 60.0  
 
 func _ready():
 	var env = WorldEnvironment.new()
@@ -14,21 +14,25 @@ func _ready():
 
 	# Create text node
 	var text = Label3D.new()
-	text.text = """TEST
+	text.text = """
 A CALL FROM THE VOID
 
-Lorem ipsum dolor sit amet consectetur 
-adipiscing elit. Quisque faucibus ex sapien 
-vitae pellentesque sem placerat. In id cursus
- mi pretium tellus duis convallis. T
+Your tenth birthday arrives, and you feel the familiar 
+sting of loneliness, a constant companion in the crowded city.
+All you wished for was connection, someone to 
+understand the quiet hum in your soul. Instead, your eccentric 
+grandmother presents you with a dusty shortwave radio and a worn, 
+leather-bound book filled with strange symbols and codes. 
 
-empus leo eu aenean sed diam urna tempor. 
-Pulvinar vivamus fringilla lacus nec metus 
-bibendum egestas. Iaculis massa nisl malesuada 
-lacinia integer nunc posuere. Ut hendrerit semper
- vel class aptent taciti sociosqu. 
-Ad litora torquent per conubia nostra inceptos
- himenaeos.
+
+"The universe is a vast conversation, child," she whispers, 
+her eyes twinkling. "All you need is the key to listen." 
+Little do you know, that radio isn't just a relic, 
+and the cypher book isn't just a collection of riddles. 
+They are the gateway to a galaxy of voices, each waiting to be heard, 
+each speaking in secrets that only you can unlock. 
+The deeper you go, the more you will discover.
+
 
 
 
