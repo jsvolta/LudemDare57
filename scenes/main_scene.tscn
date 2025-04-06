@@ -51,10 +51,10 @@ grow_horizontal = 2
 
 [node name="AlienCyphers" parent="UI" instance=ExtResource("6_rt2n2")]
 layout_mode = 1
-offset_left = 844.0
-offset_top = 180.0
-offset_right = 844.0
-offset_bottom = 180.0
+offset_left = 722.0
+offset_top = 175.0
+offset_right = 722.0
+offset_bottom = 175.0
 
 [node name="CypherBook" parent="UI" instance=ExtResource("5_gubc5")]
 offset_left = 178.0
