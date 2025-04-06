@@ -27,12 +27,12 @@ var level_data = [
 	["Moon and Mice"
 		,"Your moon is the only cheese satellite in the cosmos. Luckily no mice are able to get to it!"
 		,2,"-- --- --- -. / .- -. -.. / -- .. -.-. ."],
-	["Vibrant Pictures"
+	["Luminous Canvas"
 		,"Your drawings were analyzed. Our scientists are baffled. Please continue. You may be the key."
-		,3,"...- .. -... .-. .- -. - / .--. .. -.-. - ..- .-. . ..."],
-	["Sleepy Night"
+		,3,".-.. ..- -- .. -. --- ..- ... / -.-. .- -. ...- .- ..."],
+	["Relaxed Evening"
 		,"Your bedtime is a conspiracy. Truth sleeps in shadows. Stay curious, stay up."
-		,3,"... .-.. . . .--. -.-- / -. .. --. .... -"],
+		,3,".-. . .-.. .- -..- . -.. / . ...- . -. .. -. --."],
 	["Browser History"
 		,"Your browser history raised eyebrows. And questions. Mostly awe. Keep digging—you’re onto something."
 		,3,"-... .-. --- .-- ... . .-. / .... .. ... - --- .-. -.--"],
