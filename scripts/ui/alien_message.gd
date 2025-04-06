@@ -16,5 +16,5 @@ func _message_read():
 	message_read.emit()
 
 func _on_main_scene_alien_message(text:Variant) -> void:
-	message_text.text = text
 	show()
+	TextTransitions.typewriter(message_text, text)
