@@ -49,8 +49,12 @@ func _on_answer_submitted(answer: String) -> void:
 
 func on_message_read():
 	if (State.level_index > State.max_level):
+		TransitionScreen.transition()
+		await TransitionScreen.on_transition_finished
 		_end_game();
 	else:
+		TransitionScreen.transition()
+		await TransitionScreen.on_transition_finished
 		_load_level()
 
 

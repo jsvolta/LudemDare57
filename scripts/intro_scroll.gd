@@ -74,4 +74,7 @@ func _input(event):
 			_go_to_start_screen()
 
 func _go_to_start_screen():
-	get_tree().change_scene_to_file("res://scenes/ui/start_screen.tscn") 
+	var scene_tree: SceneTree = get_tree()
+	TransitionScreen.transition()
+	await TransitionScreen.on_transition_finished
+	scene_tree.change_scene_to_file("res://scenes/ui/start_screen.tscn") 
