@@ -5,7 +5,6 @@ const TILT_ANGLE = -50.0
 const MAX_DISTANCE = 40.0  
 
 func _ready():
-	# Set up black environment
 	var env = WorldEnvironment.new()
 	var environment = Environment.new()
 	environment.background_mode = Environment.BG_COLOR
@@ -41,7 +40,6 @@ Ad litora torquent per conubia nostra inceptos
 	text.rotation_degrees.x = TILT_ANGLE
 	add_child(text)
 	
-	# Create camera
 	var camera = Camera3D.new()
 	camera.position = Vector3(0, 2, 8)  
 	camera.rotation_degrees.x = -15  
