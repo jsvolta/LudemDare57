@@ -51,7 +51,7 @@ var level_data = [
 	["A Missing Voice"
 		,"You were never alone. You just forgot how to listen. The universe missed your voice."
 		,5,".- / -- .. ... ... .. -. --. / ...- --- .. -.-. ."],
-	["Distance Memories"
+	["Distant Memories"
 		,"You are not lost. You are unfolding. The cosmos leans closer when you begin to remember."
 		,5,"-.. .. ... - .- -. -.-. . / -- . -- --- .-. .. . ..."]
 ]
