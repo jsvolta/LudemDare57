@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dkyrv4q16lrvq"]
+[gd_scene load_steps=17 format=3 uid="uid://dkyrv4q16lrvq"]
 
 [ext_resource type="Script" uid="uid://co21kwytkdlx4" path="res://scripts/cypher_book.gd" id="1_xc2ce"]
 [ext_resource type="Script" uid="uid://bh8vv0fids844" path="res://scripts/book_cutout.gd" id="2_cutb7"]
@@ -32,7 +32,13 @@ bg_color = Color(0.223529, 0.65098, 0.835294, 0)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e33h0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yka0n"]
-bg_color = Color(0.760784, 0.105882, 0, 1)
+bg_color = Color(0.362321, 0.0283414, 4.81308e-08, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5nicn"]
+bg_color = Color(0.6, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qmrs1"]
+bg_color = Color(0.729412, 0.0588235, 0, 0)
 
 [node name="CypherBook" type="Control"]
 layout_mode = 3
@@ -405,8 +411,42 @@ grow_horizontal = 2
 scale = Vector2(1, 1.04827)
 theme_override_styles/panel = SubResource("StyleBoxFlat_yka0n")
 
+[node name="CloseButton" type="Panel" parent="CypherBook"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -17.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = 17.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5nicn")
+metadata/_edit_group_ = true
+
+[node name="Button" type="Button" parent="CypherBook/CloseButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_qmrs1")
+
+[node name="Label" type="Label" parent="CypherBook/CloseButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "X"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="BookOpen/Button" to="CypherBook" method="_on_open_book_pressed"]
 [connection signal="pressed" from="CypherBook/Background/NextPage/Button" to="CypherBook" method="_on_next_page_pressed"]
 [connection signal="pressed" from="CypherBook/Background/PrevPage/Button" to="CypherBook" method="_on_back_page_pressed"]
 [connection signal="mouse_entered" from="CypherBook/TitleBar" to="CypherBook" method="_on_title_bar_mouse_entered"]
 [connection signal="mouse_exited" from="CypherBook/TitleBar" to="CypherBook" method="_on_title_bar_mouse_exited"]
+[connection signal="pressed" from="CypherBook/CloseButton/Button" to="CypherBook" method="_on_close_book_pressed"]

@@ -79,3 +79,7 @@ func _on_title_bar_mouse_entered() -> void:
 
 func _on_title_bar_mouse_exited() -> void:
 	mouse_in_title = false
+
+
+func _on_close_book_pressed() -> void:
+	self.visible = false
