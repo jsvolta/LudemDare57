@@ -12,19 +12,27 @@ var newPosition := Vector2()
 func _ready():
 	visible = false
 	pages = [
-		$Background/CyphersCover,
-		$Background/CyphersP1,
-		$Background/CyphersP2,
-		$Background/CyphersP3
+		[	#0
+			$Background/CyphersInstruction,		#0 - General instructions of the book's purpose
+			$Background/CyphersP1,				#1 - Caesar Cypher
+		],[	#1
+			$Background/CyphersP2, 				#2 - 
+			$Background/CyphersP3, 				#3 - 
+		],[	#2
+			$Background/CyphersP4, 				#4 - 
+			$Background/CyphersP5 				#5 - 
+		]
 	]
 	_show_page(current_page)
 
 func _show_page(page_index: int) -> void:
 	for i in range(pages.size()):
 		if i == page_index:
-			pages[i].visible = true
+			pages[i][0].visible = true
+			pages[i][1].visible = true
 		else:
-			pages[i].visible = false
+			pages[i][0].visible = false
+			pages[i][1].visible = false
 
 func _on_open_book_pressed() -> void:
 	visible = true
@@ -60,6 +68,7 @@ func _input(event):
 func _physics_process(_delta):
 	if dragging:
 		var target_position = get_global_mouse_position() - drag_offset
+
 		global_position = global_position.lerp(target_position, 0.8)
 
 func _on_title_bar_mouse_entered() -> void:
