@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dayp7hg10amxv"]
+[gd_scene load_steps=4 format=3 uid="uid://dayp7hg10amxv"]
 
 [ext_resource type="Script" uid="uid://do3ckgmtilqa3" path="res://scripts/ui/end_screen.gd" id="1_n8r4t"]
 [ext_resource type="FontFile" uid="uid://cxf2llnuowy87" path="res://addons/google_fonts/Iceberg/Iceberg-Regular.ttf" id="2_wgyui"]
+[ext_resource type="AudioStream" uid="uid://4s4kumm70ra4" path="res://assets/music/end_screen2.wav" id="3_wgyui"]
 
 [node name="EndScreen" type="Control"]
 layout_mode = 3
@@ -83,5 +84,11 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_wgyui")
 theme_override_font_sizes/font_size = 32
 text = "Quit"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_wgyui")
+volume_db = -12.0
+autoplay = true
+bus = &"Music"
 
 [connection signal="button_down" from="QuitButton" to="." method="_on_quit_button_button_down"]
