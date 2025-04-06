@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cpt3skq058fdp"]
 
 [ext_resource type="FontFile" uid="uid://cqxhyfpnilyy0" path="res://addons/google_fonts/Silkscreen/Silkscreen-Regular.ttf" id="1_dn62s"]
-[ext_resource type="Script" path="res://scripts/ui/answer_popup.gd" id="1_dn62t"]
+[ext_resource type="Script" uid="uid://cfqhrmiqcp54h" path="res://scripts/ui/answer_popup.gd" id="1_dn62t"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dn62s"]
 
