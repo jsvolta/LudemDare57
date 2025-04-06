@@ -15,7 +15,6 @@ func _message_read():
 	hide()
 	message_read.emit()
 
-
 func _on_main_scene_alien_message(text:Variant) -> void:
-	show()
 	message_text.text = text
+	show()

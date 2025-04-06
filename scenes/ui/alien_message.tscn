@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dp6irpsrgdlkk"]
+[gd_scene load_steps=4 format=3 uid="uid://b2g6dqecwtta"]
 
 [ext_resource type="Script" uid="uid://cwo7ip73l2prd" path="res://scripts/ui/alien_message.gd" id="1_cigxx"]
 [ext_resource type="FontFile" uid="uid://cqxhyfpnilyy0" path="res://addons/google_fonts/Silkscreen/Silkscreen-Regular.ttf" id="2_bokcd"]
