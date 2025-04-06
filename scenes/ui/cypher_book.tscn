@@ -1,6 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://dkyrv4q16lrvq"]
+[gd_scene load_steps=15 format=3 uid="uid://dkyrv4q16lrvq"]
 
 [ext_resource type="Script" uid="uid://co21kwytkdlx4" path="res://scripts/cypher_book.gd" id="1_xc2ce"]
+[ext_resource type="Script" uid="uid://bh8vv0fids844" path="res://scenes/ui/book_cutout.gd" id="2_cutb7"]
+[ext_resource type="Script" uid="uid://ccwk577th7m4i" path="res://scenes/ui/sub_viewport.gd" id="2_e33h0"]
+[ext_resource type="StyleBox" uid="uid://daog0kpj5080b" path="res://assets/styleBoxes/book_page_style.tres" id="4_5nicn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uu6xs"]
 bg_color = Color(0.282353, 0.745098, 0, 1)
@@ -15,7 +18,11 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 bg_color = Color(0.374139, 0.374139, 0.374139, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e33h0"]
+content_margin_left = 10.0
+content_margin_right = 10.0
 bg_color = Color(0.396889, 0.396889, 0.396889, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cutb7"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yka0n"]
 
@@ -34,10 +41,10 @@ metadata/_edit_horizontal_guides_ = [3.0]
 
 [node name="BookOpen" type="PanelContainer" parent="."]
 layout_mode = 0
-offset_left = 307.0
-offset_top = 425.0
-offset_right = 361.0
-offset_bottom = 501.0
+offset_left = 383.0
+offset_top = 176.0
+offset_right = 437.0
+offset_bottom = 252.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_uu6xs")
 metadata/_edit_group_ = true
 
@@ -47,6 +54,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_3dxm6")
 text = "BOOK"
 
 [node name="CypherBook" type="Control" parent="."]
+visibility_layer = 2
 layout_mode = 3
 anchors_preset = 0
 offset_right = 524.0
@@ -71,7 +79,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CyphersP5" type="PanelContainer" parent="CypherBook/Background"]
+[node name="CyphersP5" type="Panel" parent="CypherBook/Background"]
+visibility_layer = 2
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -87,6 +96,8 @@ metadata/_edit_group_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CypherBook/Background/CyphersP5"]
 layout_mode = 2
+offset_right = 253.0
+offset_bottom = 362.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_e33h0")
 text = "Page 5"
 fit_content = true
@@ -94,6 +105,69 @@ scroll_active = false
 tab_size = 3
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="BookCutout" type="SubViewportContainer" parent="CypherBook/Background/CyphersP5"]
+visibility_layer = 2
+layout_mode = 2
+offset_right = 253.0
+offset_bottom = 362.0
+stretch = true
+script = ExtResource("2_cutb7")
+
+[node name="SubViewport" type="SubViewport" parent="CypherBook/Background/CyphersP5/BookCutout"]
+handle_input_locally = false
+canvas_cull_mask = 4294967293
+size = Vector2i(253, 362)
+render_target_update_mode = 4
+script = ExtResource("2_e33h0")
+
+[node name="Camera2D" type="Camera2D" parent="CypherBook/Background/CyphersP5/BookCutout/SubViewport"]
+visibility_layer = 2
+offset = Vector2(127.5, 181.44)
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="Panel" parent="CypherBook/Background/CyphersP5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -139.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("4_5nicn")
+
+[node name="Panel2" type="Panel" parent="CypherBook/Background/CyphersP5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 285.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("4_5nicn")
+
+[node name="Panel3" type="Panel" parent="CypherBook/Background/CyphersP5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_right = -187.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("4_5nicn")
+
+[node name="Panel4" type="Panel" parent="CypherBook/Background/CyphersP5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 210.0
+offset_top = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("4_5nicn")
 
 [node name="CyphersP4" type="PanelContainer" parent="CypherBook/Background"]
 layout_mode = 1
@@ -136,11 +210,40 @@ metadata/_edit_group_ = true
 [node name="RichTextLabel" type="RichTextLabel" parent="CypherBook/Background/CyphersP3"]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_e33h0")
-text = "Page 3"
+bbcode_enabled = true
+text = "[u][b]Alphabet Numbers[/b][/u]
+
+[table=3]
+[cell]A - 1			[/cell]
+[cell]J - 10				[/cell]
+[cell]S - 19[/cell]
+[cell]B - 2[/cell]
+[cell]K - 11[/cell]
+[cell]T - 20[/cell]
+[cell]C - 3[/cell]
+[cell]L - 12[/cell]
+[cell]U - 21[/cell]
+[cell]D - 4[/cell]
+[cell]M - 13[/cell]
+[cell]V - 22[/cell]
+[cell]E - 5[/cell]
+[cell]N - 14[/cell]
+[cell]W - 23[/cell]
+[cell]F - 6[/cell]
+[cell]O - 15[/cell]
+[cell]X - 24[/cell]
+[cell]G - 7[/cell]
+[cell]P - 16[/cell]
+[cell]Y - 25[/cell]
+[cell]H - 8[/cell]
+[cell]Q - 17[/cell]
+[cell]Z - 26[/cell]
+[cell]I - 9[/cell]
+[cell]R - 18[/cell]
+[/table]"
 fit_content = true
 scroll_active = false
 tab_size = 3
-horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CyphersP2" type="PanelContainer" parent="CypherBook/Background"]
@@ -160,7 +263,14 @@ metadata/_edit_group_ = true
 [node name="RichTextLabel" type="RichTextLabel" parent="CypherBook/Background/CyphersP2"]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_e33h0")
-text = "Page 2"
+text = "The Caesar Cipher is a way to hide a message by sliding the alphabet over!
+
+F 	->	A
+G 	->	B
+H 	->	C
+ …and so on!
+
+It’s like using a secret alphabet that’s just moved over."
 fit_content = true
 scroll_active = false
 tab_size = 3
@@ -168,6 +278,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CyphersP1" type="PanelContainer" parent="CypherBook/Background"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -178,20 +289,36 @@ offset_right = -6.0
 offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_r0du0")
+theme_override_styles/panel = SubResource("StyleBoxFlat_cutb7")
 metadata/_edit_group_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CypherBook/Background/CyphersP1"]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_e33h0")
-text = "Page 1"
+bbcode_enabled = true
+text = "MORSE CODE
+[code]
+A  .-        		B  -...     				C  -.-.     
+D  -..       		E  .        				F  ..-.    
+G  --.       		H  ....     			I  ..     
+
+J  .---      			K  -.-     	 			L  .-..   
+M  --     	   	N  -.       			O  ---    
+P  .--.      		Q  --.-     			R  .-.    
+
+S  ...       		T  -        				U  ..-    
+V  ...-      		W  .--      			X  -..-   
+Y  -.--      		Z  --..
+[/code]
+
+"
 fit_content = true
 scroll_active = false
-tab_size = 3
-horizontal_alignment = 1
+tab_size = 2
 vertical_alignment = 1
 
 [node name="CyphersInstruction" type="PanelContainer" parent="CypherBook/Background"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -208,11 +335,13 @@ metadata/_edit_group_ = true
 [node name="RichTextLabel" type="RichTextLabel" parent="CypherBook/Background/CyphersInstruction"]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_e33h0")
-text = "Instructions"
+text = "The universe is a vast conversation. All you need is the key to listen.
+I hope you're able to find what I lost.
+
+- Love Grammy"
 fit_content = true
 scroll_active = false
 tab_size = 3
-horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="NextPage" type="Panel" parent="CypherBook/Background"]
