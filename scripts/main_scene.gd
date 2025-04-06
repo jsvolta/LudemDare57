@@ -1,9 +1,12 @@
 extends Node2D
 
 signal cypher_changed(new_text)
+signal alien_message(text)
 
 @onready var answer_popup = $UI/AnswerPopup
 @onready var cypher_text = $UI/CypherText
+@onready var alien_cypher = $UI/AlienCyphers
+@onready var cypher_book = $UI/CypherBook
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -37,12 +40,19 @@ func _on_answer_submitted(answer: String) -> void:
 	if answer.to_upper() == State.current_level_data[0].to_upper():
 		print("Correct answer!")
 		State.level_index += 1
-		if (State.level_index > State.max_level):
-			_end_game();
-		_load_level()
+		# TODO: hide cypher and book
+		alien_message.emit(State.current_level_data[1])
+
 	else:
 		print("Wrong answer!")
 		cypher_text.shake()
+
+func on_message_read():
+	if (State.level_index > State.max_level):
+		_end_game();
+	else:
+		_load_level()
+
 
 func caesar_cipher(text: String, shift: int = 5) -> String:
 	var result = ""
