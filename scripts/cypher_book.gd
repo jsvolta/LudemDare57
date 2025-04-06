@@ -14,13 +14,13 @@ func _ready():
 	pages = [
 		[	#0
 			$Background/CyphersInstruction,		#0 - General instructions of the book's purpose
-			$Background/CyphersP1,				#1 - Caesar Cypher
+			$Background/CyphersP1,				#1 - Morse Code
 		],[	#1
-			$Background/CyphersP2, 				#2 - 
-			$Background/CyphersP3, 				#3 - 
+			$Background/CyphersP2, 				#2 - Caesar Cypher
+			$Background/CyphersP3, 				#3 - Caesar Cypher
 		],[	#2
 			$Background/CyphersP4, 				#4 - 
-			$Background/CyphersP5 				#5 - 
+			$Background/CyphersP5 				#5 - Page Cutouts
 		]
 	]
 	_show_page(current_page)
@@ -79,7 +79,6 @@ func _on_title_bar_mouse_entered() -> void:
 
 func _on_title_bar_mouse_exited() -> void:
 	mouse_in_title = false
-
 
 func _on_close_book_pressed() -> void:
 	self.visible = false
