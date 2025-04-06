@@ -13,41 +13,6 @@ func _ready():
 	env.environment = environment
 	add_child(env)
 
-	# Add star particles
-	var stars = CPUParticles2D.new()
-	stars.position = Vector2(640, 360)  # Center of screen
-	stars.amount = 300
-	stars.lifetime = 8.0
-	stars.preprocess = 8.0
-	stars.emission_shape = CPUParticles2D.EMISSION_SHAPE_RECTANGLE
-	stars.emission_rect_extents = Vector2(640, 360)
-	stars.direction = Vector2(0, 1)
-	stars.spread = 10.0
-	stars.gravity = Vector2.ZERO
-	stars.initial_velocity_min = 10.0
-	stars.initial_velocity_max = 30.0
-	stars.scale_amount_max = 3.0
-	stars.color = Color(1, 1, 1, 0.7)
-	add_child(stars)
-
-	# Add fast moving stars
-	var fast_stars = CPUParticles2D.new()
-	fast_stars.position = Vector2(640, 360)
-	fast_stars.amount = 50
-	fast_stars.lifetime = 4.0
-	fast_stars.preprocess = 4.0
-	fast_stars.emission_shape = CPUParticles2D.EMISSION_SHAPE_RECTANGLE
-	fast_stars.emission_rect_extents = Vector2(640, 360)
-	fast_stars.direction = Vector2(0, 1)
-	fast_stars.spread = 5.0
-	fast_stars.gravity = Vector2.ZERO
-	fast_stars.initial_velocity_min = 50.0
-	fast_stars.initial_velocity_max = 100.0
-	fast_stars.scale_amount_min = 2.0
-	fast_stars.scale_amount_max = 4.0
-	fast_stars.color = Color(1, 1, 1, 0.9)
-	add_child(fast_stars)
-
 	# Create text node
 	var text = Label3D.new()
 	text.text = """TEST
