@@ -2,6 +2,8 @@ extends Node2D
 
 signal cypher_changed(new_text)
 
+
+
 @onready var answer_popup = $UI/AnswerPopup
 @onready var cypher_text = $UI/CypherText
 
@@ -10,6 +12,7 @@ func _ready() -> void:
 	_load_level()
 	# Connect answer submission signal
 	answer_popup.answer_submitted.connect(_on_answer_submitted)
+	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 
 func _load_level():
 	State.update_current_level_data()
