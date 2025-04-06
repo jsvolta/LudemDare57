@@ -1,7 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://dkyrv4q16lrvq"]
+[gd_scene load_steps=9 format=3 uid="uid://dkyrv4q16lrvq"]
 
-[ext_resource type="Script" path="res://scripts/cypher_book.gd" id="1_xc2ce"]
-[ext_resource type="Script" uid="uid://divsiqdwkeoj0" path="res://scenes/text_edit.gd" id="2_wrea6"]
+[ext_resource type="Script" uid="uid://co21kwytkdlx4" path="res://scripts/cypher_book.gd" id="1_xc2ce"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uu6xs"]
 bg_color = Color(0.282353, 0.745098, 0, 1)
@@ -10,18 +9,19 @@ bg_color = Color(0.282353, 0.745098, 0, 1)
 bg_color = Color(0.202558, 0.452076, 0.24796, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xc2ce"]
-bg_color = Color(0.6, 0.6, 0.6, 0.0313726)
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_glv2v"]
+bg_color = Color(0.224797, 0.649121, 0.835063, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r0du0"]
 bg_color = Color(0.374139, 0.374139, 0.374139, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cm0pq"]
-bg_color = Color(0.643137, 0.192157, 0.203922, 0.65098)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e33h0"]
+bg_color = Color(0.396889, 0.396889, 0.396889, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fos0i"]
-bg_color = Color(0.642381, 0.190858, 0.205298, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yka0n"]
+bg_color = Color(0.760784, 0.105882, 0, 1)
 
 [node name="CypherBook" type="Control"]
 layout_mode = 3
@@ -29,6 +29,7 @@ anchors_preset = 0
 metadata/_edit_horizontal_guides_ = [3.0]
 
 [node name="BookOpen" type="PanelContainer" parent="."]
+layout_mode = 0
 offset_left = 242.0
 offset_top = 248.0
 offset_right = 296.0
@@ -151,7 +152,7 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CyphersP1" type="PanelContainer" parent="CypherBook/Background"]
+[node name="CyphersP1" type="Panel" parent="CypherBook/Background"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -166,21 +167,32 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_r0du0")
 metadata/_edit_group_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CypherBook/Background/CyphersP1"]
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -165.5
+offset_top = -176.0
+offset_right = 165.5
+offset_bottom = 176.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e33h0")
 text = "The Caesar Cipher is a way to hide a message by sliding the alphabet over!
 You pick a number (like 3), and shift every letter that many steps forward.
 
 So:
-    A becomes D
-    B becomes E
-    C becomes F
-    …and so on!
+F -> A
+G -> B
+H -> C
+ …and so on!
 
 It’s like using a secret alphabet that’s just moved over."
 fit_content = true
 scroll_active = false
-horizontal_alignment = 1
-vertical_alignment = 1
+tab_size = 3
 
 [node name="CyphersCover" type="PanelContainer" parent="CypherBook/Background"]
 layout_mode = 1
@@ -204,64 +216,20 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CloseBook" type="Panel" parent="CypherBook/Background"]
+[node name="TitleBar" type="Panel" parent="CypherBook"]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
+anchors_preset = 10
 anchor_right = 1.0
-offset_left = -31.0
-offset_top = 4.0
-offset_right = -8.0
-offset_bottom = 27.0
-grow_horizontal = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_cm0pq")
-
-[node name="Button" type="Button" parent="CypherBook/Background/CloseBook"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 2.0
-offset_top = 2.0
-offset_right = -2.0
-offset_bottom = -2.0
+offset_left = 16.0
+offset_top = 12.0
+offset_right = -15.0
+offset_bottom = 26.0
 grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_fos0i")
-
-[node name="TextEditor" type="Control" parent="CypherBook"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 436.0
-offset_right = 811.0
-offset_bottom = 454.0
-metadata/_edit_group_ = true
-
-[node name="Panel" type="Panel" parent="CypherBook/TextEditor"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TextEdit" type="TextEdit" parent="CypherBook/TextEditor"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -173.5
-offset_top = -212.0
-offset_right = 174.5
-offset_bottom = 211.0
-grow_horizontal = 2
-grow_vertical = 2
-placeholder_text = "Write something here!"
-script = ExtResource("2_wrea6")
+scale = Vector2(1, 1.04827)
+theme_override_styles/panel = SubResource("StyleBoxFlat_yka0n")
 
 [connection signal="pressed" from="BookOpen/Button" to="CypherBook" method="_on_open_book_pressed"]
 [connection signal="pressed" from="CypherBook/Background/NextPage/Button" to="CypherBook" method="_on_next_page_pressed"]
 [connection signal="pressed" from="CypherBook/Background/PrevPage/Button" to="CypherBook" method="_on_back_page_pressed"]
-[connection signal="pressed" from="CypherBook/Background/CloseBook/Button" to="CypherBook" method="_on_button_pressed"]
+[connection signal="mouse_entered" from="CypherBook/TitleBar" to="CypherBook" method="_on_title_bar_mouse_entered"]
+[connection signal="mouse_exited" from="CypherBook/TitleBar" to="CypherBook" method="_on_title_bar_mouse_exited"]
