@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3 uid="uid://duhoynju0lq57"]
+
+[sub_resource type="Environment" id="Environment_2xjnm"]
+background_mode = 3
+ambient_light_source = 2
+glow_enabled = true
+glow_bloom = 0.5
+
+[node name="IntroScroll" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_2xjnm")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 5, 8)
+current = true
+fov = 30.0
+
+[node name="ScrollContainer" type="Node3D" parent="."]
+
+[node name="ScrollText" type="Label3D" parent="ScrollContainer"]
+transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0)
+modulate = Color(1, 0.901961, 0, 1)
+outline_modulate = Color(1, 0.901961, 0, 0)
+text = "A long time ago in a galaxy far,
+far away....
+
+
+EPISODE I
+A CALL FROM THE VOID
+
+
+The galaxy is in turmoil. Strange
+signals from deep space have begun
+to appear, encrypted with ancient
+ciphers long forgotten.
+
+As the last remaining cryptographer
+in this sector, you must decode
+these mysterious messages before
+it's too late...
+
+The fate of countless worlds now
+rests in your hands..."
+font_size = 64
+outline_size = 0
+width = 800.0
