@@ -89,5 +89,6 @@ text = "Start Mission"
 stream = ExtResource("3_ihgl4")
 volume_db = -12.0
 autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
