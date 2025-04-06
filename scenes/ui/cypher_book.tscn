@@ -284,7 +284,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CyphersP1" type="PanelContainer" parent="CypherBook/Background"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -324,7 +323,6 @@ tab_size = 2
 vertical_alignment = 1
 
 [node name="CyphersInstruction" type="PanelContainer" parent="CypherBook/Background"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -342,6 +340,9 @@ metadata/_edit_group_ = true
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_e33h0")
 text = "The universe is a vast conversation. All you need is the key to listen.
+
+These decriptions can help you learn something new about the universe.
+
 I hope you're able to find what I lost.
 
 - Love Grammy"
