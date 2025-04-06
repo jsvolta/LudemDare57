@@ -12,7 +12,7 @@ A symphony of voices, not heard but felt, resonated within you, a welcoming embr
 func _ready() -> void:
 	quit_button.hide()
 	anchors_preset = Control.PRESET_FULL_RECT
-	TextTransitions.typewriter(message_box, final_message)
+	TextTransitions.typewriter(message_box, final_message, 60)
 	await TextTransitions.finished_typing
 	quit_button.show()
 
