@@ -1,21 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://b2g6dqecwtta"]
+[gd_scene load_steps=7 format=3 uid="uid://b2g6dqecwtta"]
 
 [ext_resource type="Script" uid="uid://cwo7ip73l2prd" path="res://scripts/ui/alien_message.gd" id="1_cigxx"]
+[ext_resource type="FontFile" uid="uid://bediy5b4ickqs" path="res://addons/google_fonts/VT323/default_font.tres" id="2_bkdus"]
 [ext_resource type="FontFile" uid="uid://cqxhyfpnilyy0" path="res://addons/google_fonts/Silkscreen/Silkscreen-Regular.ttf" id="2_bokcd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bokcd"]
+bg_color = Color(0.114897, 0.114897, 0.114897, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_bkdus"]
 font = ExtResource("2_bokcd")
 font_size = 18
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bkdus"]
+bg_color = Color(0.381703, 0.381703, 0.381703, 1)
+
 [node name="AlienMessage" type="Panel"]
 offset_right = 450.0
 offset_bottom = 160.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_bokcd")
 script = ExtResource("1_cigxx")
 
 [node name="MessageText" type="Label" parent="."]
 layout_mode = 0
 offset_right = 450.0
 offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("2_bkdus")
 text = "\"Bubble wrap SOS! We require immediate popping assistance. Your mission is loud and clear.\""
 label_settings = SubResource("LabelSettings_bkdus")
 horizontal_alignment = 1
@@ -30,12 +39,14 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -35.5
-offset_top = -31.0
+offset_top = -38.0
 offset_right = 35.5
+offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("2_bokcd")
 theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_bkdus")
 text = "Ack"
 
 [connection signal="pressed" from="ConfirmButton" to="." method="_on_confirm_button_pressed"]
