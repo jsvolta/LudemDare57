@@ -1,7 +1,7 @@
 [gd_scene load_steps=37 format=3 uid="uid://dkyrv4q16lrvq"]
 
 [ext_resource type="Texture2D" uid="uid://dbchabqfp8ipr" path="res://assets/sprites/book_hover.png" id="1_niwfc"]
-[ext_resource type="Texture2D" uid="uid://100qptfo1ag6" path="res://assets/sprites/book_focus.png" id="1_oxjdx"]
+[ext_resource type="Texture2D" uid="uid://bqraegcbuce7g" path="res://assets/sprites/book_pressed.png" id="1_oxjdx"]
 [ext_resource type="Texture2D" uid="uid://dnrdu0ojodnau" path="res://assets/sprites/book.png" id="1_qmrs1"]
 [ext_resource type="Script" uid="uid://co21kwytkdlx4" path="res://scripts/cypher_book.gd" id="1_xc2ce"]
 [ext_resource type="Script" uid="uid://bh8vv0fids844" path="res://scripts/book_cutout.gd" id="2_cutb7"]
