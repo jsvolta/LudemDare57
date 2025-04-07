@@ -5,10 +5,11 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	volume_slider.value = 0.5;
+	volume_slider.value = State.volume_slider_value;
 	hide()
 
 func _on_volume_slider_value_changed(value:float) -> void:
+	State.volume_slider_value = value
 	AudioServer.set_bus_volume_db(master_bus_index, linear_to_db(value))
 
 
