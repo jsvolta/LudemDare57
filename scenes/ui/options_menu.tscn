@@ -1,0 +1,95 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkgbhcdogtuxa"]
+
+[ext_resource type="FontFile" uid="uid://bnl2tsb2chuqu" path="res://addons/google_fonts/VT323/VT323-Regular.ttf" id="1_ta2k2"]
+[ext_resource type="Script" uid="uid://bwnknk0sw1yh2" path="res://scripts/ui/options_menu.gd" id="1_wj2x4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wj2x4"]
+bg_color = Color(0, 0, 0, 0.470588)
+
+[node name="OptionsMenu" type="CanvasLayer"]
+layer = 5
+script = ExtResource("1_wj2x4")
+
+[node name="Container" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wj2x4")
+
+[node name="OptionCluster" type="Panel" parent="Container"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -60.0
+offset_right = 180.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VolumeContainer" type="Control" parent="Container/OptionCluster"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -130.0
+offset_top = 12.0
+offset_right = 130.0
+offset_bottom = 52.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="Container/OptionCluster/VolumeContainer"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -12.5
+offset_right = 58.0
+offset_bottom = 12.5
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_ta2k2")
+theme_override_font_sizes/font_size = 24
+text = "Volume"
+
+[node name="HSlider" type="HSlider" parent="Container/OptionCluster/VolumeContainer"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -8.0
+offset_bottom = 8.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 0
+max_value = 1.0
+step = 0.001
+value = 0.5
+
+[node name="QuitToMenu" type="Button" parent="Container/OptionCluster"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -80.5
+offset_top = -53.0
+offset_right = 80.5
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_ta2k2")
+theme_override_font_sizes/font_size = 32
+text = "Quit To Menu"
+
+[connection signal="value_changed" from="Container/OptionCluster/VolumeContainer/HSlider" to="." method="_on_volume_slider_value_changed"]
+[connection signal="pressed" from="Container/OptionCluster/QuitToMenu" to="." method="_on_quit_to_menu_pressed"]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://rv7sfydpqe5r"]
+[gd_scene load_steps=8 format=3 uid="uid://rv7sfydpqe5r"]
 
 [ext_resource type="Script" uid="uid://c01w5qw4qjcg7" path="res://scripts/main_scene.gd" id="1_w2twt"]
 [ext_resource type="PackedScene" uid="uid://cpt3skq058fdp" path="res://scenes/ui/answer_popup.tscn" id="4_pu3yx"]
 [ext_resource type="PackedScene" uid="uid://dkyrv4q16lrvq" path="res://scenes/ui/cypher_book.tscn" id="5_gubc5"]
 [ext_resource type="PackedScene" uid="uid://b2g6dqecwtta" path="res://scenes/ui/alien_message.tscn" id="6_c16ls"]
 [ext_resource type="PackedScene" uid="uid://bq7cg10rfcxcf" path="res://scenes/ui/alien_cyphers.tscn" id="6_rt2n2"]
+[ext_resource type="PackedScene" uid="uid://dkgbhcdogtuxa" path="res://scenes/ui/options_menu.tscn" id="7_c16ls"]
 [ext_resource type="AudioStream" uid="uid://cqh52eyvt0weu" path="res://assets/music/start_menu.wav" id="8_18nlu"]
 
 [node name="MainScene" type="Node2D"]
@@ -63,6 +64,8 @@ stream = ExtResource("8_18nlu")
 volume_db = -12.0
 autoplay = true
 bus = &"Music"
+
+[node name="OptionsMenu" parent="." instance=ExtResource("7_c16ls")]
 
 [connection signal="alien_message" from="." to="UI/AlienMessage" method="_on_main_scene_alien_message"]
 [connection signal="cypher_changed" from="." to="UI/AlienCyphers" method="_on_main_scene_cypher_changed"]
