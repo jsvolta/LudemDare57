@@ -36,6 +36,6 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("2_bokcd")
 theme_override_font_sizes/font_size = 18
-text = "Confirm"
+text = "Ack"
 
 [connection signal="pressed" from="ConfirmButton" to="." method="_on_confirm_button_pressed"]

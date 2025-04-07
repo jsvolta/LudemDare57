@@ -78,13 +78,13 @@ anchor_top = 0.7
 anchor_right = 0.5
 anchor_bottom = 0.7
 offset_left = -100.0
+text = "Start"
 offset_right = 100.0
 offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_7ykc4")
 theme_override_font_sizes/font_size = 32
-text = "Start Mission"
 
 [node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_kolwf")
