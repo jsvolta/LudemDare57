@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dkgbhcdogtuxa"]
+[gd_scene load_steps=4 format=3 uid="uid://ctpcp4jhcv4be"]
 
 [ext_resource type="FontFile" uid="uid://bnl2tsb2chuqu" path="res://addons/google_fonts/VT323/VT323-Regular.ttf" id="1_ta2k2"]
 [ext_resource type="Script" uid="uid://bwnknk0sw1yh2" path="res://scripts/ui/options_menu.gd" id="1_wj2x4"]
