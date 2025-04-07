@@ -33,8 +33,9 @@ func _load_level():
 	toaster_sprite.play("flash")
 
 	# Random range
-	range_changed.emit(randf_range(State.communication_range, 
-						(State.communication_range * State.current_level_data[2])))
+	var new_communication_range = randf_range(State.communication_range, (State.communication_range * State.current_level_data[2]))
+	State.communication_range = new_communication_range
+	range_changed.emit(new_communication_range)
 
 	
 func _end_game():
