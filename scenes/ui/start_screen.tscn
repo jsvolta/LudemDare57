@@ -78,13 +78,29 @@ anchor_top = 0.7
 anchor_right = 0.5
 anchor_bottom = 0.7
 offset_left = -100.0
-text = "Start"
+offset_top = -2.0
 offset_right = 100.0
-offset_bottom = 40.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start"
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.7
+anchor_right = 0.5
+anchor_bottom = 0.7
+offset_left = -100.0
+offset_top = 61.0
+offset_right = 100.0
+offset_bottom = 109.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_7ykc4")
 theme_override_font_sizes/font_size = 32
+text = "Quit"
 
 [node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_kolwf")
@@ -98,3 +114,4 @@ volume_db = -12.0
 bus = &"Music"
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
