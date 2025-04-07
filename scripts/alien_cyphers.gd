@@ -8,17 +8,10 @@ var drag_offset := Vector2.ZERO
 var dragging := false
 var new_position := Vector2()
 
+@onready var image_panel: Panel = $CypherPage/Panel
 
 func _ready() -> void:
 	self.visible = true
-
-
-
-
-
-
-
-
 
 # Moving the book
 func _input(event):
@@ -50,3 +43,9 @@ func _on_draggable_area_mouse_entered() -> void:
 
 func _on_draggable_area_mouse_exited() -> void:
 	mouse_in_title = false
+
+
+func _on_main_scene_cypher_changed(image_path:String) -> void:
+	var style_box: StyleBoxTexture = image_panel.get_theme_stylebox("panel")
+	style_box.texture = load(image_path)
+	image_panel.add_theme_stylebox_override("panel", style_box)

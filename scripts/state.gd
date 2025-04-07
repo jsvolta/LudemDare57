@@ -104,7 +104,7 @@ var current_level_data: Array
 
 # TODO: clamp level_index
 var level_index: int = 1
-var max_level: int = 5
+var max_level: int = 3
 
 func _ready() -> void:
 	self.level_data.shuffle();
