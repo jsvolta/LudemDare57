@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bq7cg10rfcxcf"]
 
 [ext_resource type="Script" uid="uid://b3qvnprk4hcr8" path="res://scripts/alien_cyphers.gd" id="1_lbpqt"]
-[ext_resource type="Texture2D" uid="uid://bot6bvuhcrqp5" path="res://assets/sprites/Cyphers/Level1Cypher1.png" id="2_pdp6h"]
+[ext_resource type="Texture2D" uid="uid://n5rfbowmoa22" path="res://assets/sprites/cyphers/level_1_cypher_1.png" id="2_pdp6h"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lbpqt"]
 texture = ExtResource("2_pdp6h")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c852xne5n1758"
-path="res://.godot/imported/Level1Cypher2.png-6ad4f5c1204fc43a190aaaff15234f8c.ctex"
+uid="uid://n5rfbowmoa22"
+path="res://.godot/imported/level_1_cypher_1.png-a28557dfcc1949edfded1ec4e04cc8ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Cyphers/Level1Cypher2.png"
-dest_files=["res://.godot/imported/Level1Cypher2.png-6ad4f5c1204fc43a190aaaff15234f8c.ctex"]
+source_file="res://assets/sprites/cyphers/level_1_cypher_1.png"
+dest_files=["res://.godot/imported/level_1_cypher_1.png-a28557dfcc1949edfded1ec4e04cc8ae.ctex"]
 
 [params]
 
