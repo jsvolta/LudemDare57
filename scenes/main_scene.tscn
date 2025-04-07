@@ -79,6 +79,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="IntroText" parent="UI" instance=ExtResource("6_18nlu")]
+visible = false
 z_index = 100
 layout_mode = 1
 
