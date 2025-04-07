@@ -1,6 +1,7 @@
-[gd_scene load_steps=35 format=3 uid="uid://dkyrv4q16lrvq"]
+[gd_scene load_steps=37 format=3 uid="uid://dkyrv4q16lrvq"]
 
 [ext_resource type="Texture2D" uid="uid://dbchabqfp8ipr" path="res://assets/sprites/book_hover.png" id="1_niwfc"]
+[ext_resource type="Texture2D" uid="uid://100qptfo1ag6" path="res://assets/sprites/book_focus.png" id="1_oxjdx"]
 [ext_resource type="Texture2D" uid="uid://dnrdu0ojodnau" path="res://assets/sprites/book.png" id="1_qmrs1"]
 [ext_resource type="Script" uid="uid://co21kwytkdlx4" path="res://scripts/cypher_book.gd" id="1_xc2ce"]
 [ext_resource type="Script" uid="uid://bh8vv0fids844" path="res://scripts/book_cutout.gd" id="2_cutb7"]
@@ -10,8 +11,10 @@
 [ext_resource type="FontFile" uid="uid://bediy5b4ickqs" path="res://addons/google_fonts/VT323/default_font.tres" id="7_f844c"]
 [ext_resource type="FontFile" uid="uid://cqxhyfpnilyy0" path="res://addons/google_fonts/Silkscreen/Silkscreen-Regular.ttf" id="9_ygn38"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_niwfc"]
-texture = ExtResource("1_niwfc")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4r6ya"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oxjdx"]
+texture = ExtResource("1_oxjdx")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ygn38"]
 texture = ExtResource("1_niwfc")
@@ -20,7 +23,7 @@ texture = ExtResource("1_niwfc")
 texture = ExtResource("1_niwfc")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ye4ph"]
-texture = ExtResource("1_niwfc")
+texture = ExtResource("1_oxjdx")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qmrs1"]
 texture = ExtResource("1_qmrs1")
@@ -110,7 +113,8 @@ layout_mode = 2
 offset_right = 119.0
 offset_bottom = 41.0
 scale = Vector2(2, 2)
-theme_override_styles/focus = SubResource("StyleBoxTexture_niwfc")
+theme_override_styles/focus = SubResource("StyleBoxTexture_4r6ya")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_oxjdx")
 theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_ygn38")
 theme_override_styles/hover = SubResource("StyleBoxTexture_f844c")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ye4ph")
