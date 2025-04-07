@@ -28,8 +28,9 @@ func _load_level():
 	cypher_changed.emit(State.current_level_data[3])
 
 	# Random range
-	range_changed.emit(randf_range(State.range, 
-						(State.range * State.current_level_data[2])))
+	range_changed.emit(randf_range(State.communication_range, 
+						(State.communication_range * State.current_level_data[2])))
+
 	
 func _end_game():
 	get_tree().change_scene_to_file("res://scenes/ui/end_screen.tscn") 
