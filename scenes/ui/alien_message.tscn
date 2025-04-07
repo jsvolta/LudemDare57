@@ -1,30 +1,12 @@
 [gd_scene load_steps=9 format=3 uid="uid://b2g6dqecwtta"]
 
+[ext_resource type="StyleBox" uid="uid://blmwwx6k4soi" path="res://assets/styleBoxes/alien_message_box.tres" id="1_2qwh3"]
 [ext_resource type="Script" uid="uid://cwo7ip73l2prd" path="res://scripts/ui/alien_message.gd" id="1_cigxx"]
 [ext_resource type="FontFile" uid="uid://bediy5b4ickqs" path="res://addons/google_fonts/VT323/default_font.tres" id="2_bkdus"]
 [ext_resource type="FontFile" uid="uid://cqxhyfpnilyy0" path="res://addons/google_fonts/Silkscreen/Silkscreen-Regular.ttf" id="2_bokcd"]
 [ext_resource type="StyleBox" uid="uid://di8fh5njrd5bo" path="res://assets/styleBoxes/default_hover_button.tres" id="4_axe4r"]
 [ext_resource type="StyleBox" uid="uid://yinxxw3gnl2s" path="res://assets/styleBoxes/default_pressed_button.tres" id="5_2qwh3"]
 [ext_resource type="StyleBox" uid="uid://bsettx4eyj8yt" path="res://assets/styleBoxes/default_button.tres" id="6_eiwit"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jpcpy"]
-content_margin_left = 0.0
-content_margin_top = 0.0
-content_margin_right = 0.0
-content_margin_bottom = 0.0
-bg_color = Color(0.121569, 0.121569, 0.227451, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.0746453, 0.074611, 0.152697, 1)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-shadow_color = Color(0.017913, 0.0178931, 0.054027, 1)
-shadow_size = 5
-shadow_offset = Vector2(-1, 0)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_axe4r"]
 content_margin_left = 10.0
@@ -35,7 +17,7 @@ content_margin_bottom = 5.0
 [node name="AlienMessage" type="Panel"]
 offset_right = 450.0
 offset_bottom = 160.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_jpcpy")
+theme_override_styles/panel = ExtResource("1_2qwh3")
 script = ExtResource("1_cigxx")
 
 [node name="MessageText" type="RichTextLabel" parent="."]
