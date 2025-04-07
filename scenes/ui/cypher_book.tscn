@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://dkyrv4q16lrvq"]
+[gd_scene load_steps=39 format=3 uid="uid://dkyrv4q16lrvq"]
 
 [ext_resource type="Texture2D" uid="uid://dbchabqfp8ipr" path="res://assets/sprites/book_hover.png" id="1_niwfc"]
 [ext_resource type="Texture2D" uid="uid://bqraegcbuce7g" path="res://assets/sprites/book_pressed.png" id="1_oxjdx"]
@@ -6,10 +6,10 @@
 [ext_resource type="Script" uid="uid://co21kwytkdlx4" path="res://scripts/cypher_book.gd" id="1_xc2ce"]
 [ext_resource type="Script" uid="uid://bh8vv0fids844" path="res://scripts/book_cutout.gd" id="2_cutb7"]
 [ext_resource type="Script" uid="uid://ccwk577th7m4i" path="res://scripts/sub_viewport.gd" id="2_e33h0"]
-[ext_resource type="StyleBox" uid="uid://daog0kpj5080b" path="res://assets/styleBoxes/book_page_style.tres" id="4_5nicn"]
 [ext_resource type="StyleBox" uid="uid://wk30338ace3k" path="res://assets/styleBoxes/book_page_style_2.tres" id="4_ye4ph"]
-[ext_resource type="FontFile" uid="uid://bediy5b4ickqs" path="res://addons/google_fonts/VT323/default_font.tres" id="7_f844c"]
+[ext_resource type="Script" uid="uid://de7ujpm06okio" path="res://scenes/ui/camera_2d.gd" id="8_4r6ya"]
 [ext_resource type="FontFile" uid="uid://cqxhyfpnilyy0" path="res://addons/google_fonts/Silkscreen/Silkscreen-Regular.ttf" id="9_ygn38"]
+[ext_resource type="FontFile" uid="uid://cxf2llnuowy87" path="res://addons/google_fonts/Iceberg/Iceberg-Regular.ttf" id="10_4r6ya"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4r6ya"]
 
@@ -45,14 +45,18 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4r6ya"]
-bg_color = Color(0, 0, 0, 0.00392157)
-shadow_color = Color(0, 0, 0, 0.0823529)
+bg_color = Color(0.639216, 0.603922, 0.501961, 0.392157)
+shadow_color = Color(0, 0, 0, 0)
 shadow_size = 1
 shadow_offset = Vector2(0, 2)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jnaw2"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qmrs1"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jnaw2"]
+bg_color = Color(1, 0.270588, 0.6, 0.862745)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hk5wq"]
+bg_color = Color(0.992157, 0.964706, 0.890196, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hk5wq"]
 
@@ -61,10 +65,10 @@ content_margin_left = 10.0
 content_margin_right = 10.0
 bg_color = Color(0.992157, 0.964706, 0.890196, 1)
 border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tptjx"]
 
@@ -82,13 +86,17 @@ corner_radius_bottom_left = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_glv2v"]
 bg_color = Color(0.223529, 0.65098, 0.835294, 0)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e33h0"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4r6ya"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5nicn"]
-bg_color = Color(0.368627, 0.109804, 0.0862745, 1)
+bg_color = Color(0.647059, 0.164706, 0.133333, 1)
 border_color = Color(0.666667, 0.54902, 0.309804, 1)
 border_blend = true
 corner_radius_top_left = 5
@@ -97,6 +105,8 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 shadow_color = Color(0, 0, 0, 0.2)
 shadow_size = 2
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l0fql"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qmrs1"]
 bg_color = Color(0.729412, 0.0588235, 0, 0)
@@ -127,7 +137,7 @@ anchors_preset = 0
 offset_left = 5.0
 offset_top = 3.0
 offset_right = 529.0
-offset_bottom = 395.0
+offset_bottom = 354.0
 script = ExtResource("1_xc2ce")
 metadata/_edit_group_ = true
 
@@ -145,6 +155,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = -19.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
@@ -165,8 +176,8 @@ anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -2.0
-offset_top = 1.0
+offset_left = -3.0
+offset_top = 2.0
 offset_right = 3.0
 offset_bottom = -2.0
 grow_horizontal = 2
@@ -174,196 +185,166 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_4r6ya")
 
 [node name="CyphersP5" type="Panel" parent="CypherBook/Background"]
-visible = false
 visibility_layer = 2
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 265.0
-offset_top = 24.0
-offset_right = -6.0
-offset_bottom = -6.0
+offset_left = 267.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_jnaw2")
+theme_override_styles/panel = ExtResource("4_ye4ph")
 metadata/_edit_group_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CypherBook/Background/CyphersP5"]
-layout_mode = 2
-offset_right = 253.0
-offset_bottom = 362.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 55.0
+offset_right = -14.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0.439216, 0.752941, 1)
+theme_override_fonts/normal_font = ExtResource("10_4r6ya")
+theme_override_font_sizes/normal_font_size = 19
 theme_override_styles/normal = ExtResource("4_ye4ph")
+text = "Peek into the void"
 fit_content = true
 scroll_active = false
 tab_size = 3
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="BookCutout" type="SubViewportContainer" parent="CypherBook/Background/CyphersP5"]
 visibility_layer = 2
 layout_mode = 2
-offset_right = 253.0
-offset_bottom = 361.0
+offset_left = 24.0
+offset_top = 127.0
+offset_right = 194.0
+offset_bottom = 235.0
 stretch = true
 script = ExtResource("2_cutb7")
 
 [node name="SubViewport" type="SubViewport" parent="CypherBook/Background/CyphersP5/BookCutout"]
 handle_input_locally = false
 canvas_cull_mask = 4294967293
-size = Vector2i(253, 361)
-render_target_update_mode = 0
+size = Vector2i(170, 108)
+render_target_update_mode = 4
 script = ExtResource("2_e33h0")
 
 [node name="Camera2D" type="Camera2D" parent="CypherBook/Background/CyphersP5/BookCutout/SubViewport"]
 visibility_layer = 2
-offset = Vector2(127.5, 181.44)
+offset = Vector2(109, 179)
+script = ExtResource("8_4r6ya")
 metadata/_edit_lock_ = true
 
-[node name="SubViewportCover" type="Panel" parent="CypherBook/Background/CyphersP5"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_qmrs1")
+[node name="CutoutBlock" type="Panel" parent="CypherBook/Background/CyphersP5"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 81.0
+offset_right = 238.0
+offset_bottom = 267.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_jnaw2")
 
-[node name="Panel" type="Panel" parent="CypherBook/Background/CyphersP5/SubViewportCover"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_bottom = -228.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = ExtResource("4_5nicn")
+[node name="Block1" type="Panel" parent="CypherBook/Background/CyphersP5/CutoutBlock"]
+visible = false
+layout_mode = 0
+offset_left = 134.0
+offset_top = 127.0
+offset_right = 180.0
+offset_bottom = 154.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jnaw2")
 
-[node name="Panel2" type="Panel" parent="CypherBook/Background/CyphersP5/SubViewportCover"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 126.0
-offset_top = 134.0
-offset_bottom = -201.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = ExtResource("4_5nicn")
+[node name="Block2" type="Panel" parent="CypherBook/Background/CyphersP5/CutoutBlock"]
+visible = false
+layout_mode = 0
+offset_left = 117.0
+offset_top = 73.0
+offset_right = 180.0
+offset_bottom = 100.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jnaw2")
 
-[node name="Panel3" type="Panel" parent="CypherBook/Background/CyphersP5/SubViewportCover"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 134.0
-offset_right = -190.0
-offset_bottom = -175.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = ExtResource("4_5nicn")
+[node name="Block3" type="Panel" parent="CypherBook/Background/CyphersP5/CutoutBlock"]
+visible = false
+layout_mode = 0
+offset_left = 23.0
+offset_top = 100.0
+offset_right = 55.0
+offset_bottom = 127.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jnaw2")
 
-[node name="Panel4" type="Panel" parent="CypherBook/Background/CyphersP5/SubViewportCover"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 63.0
-offset_top = 159.0
-offset_right = -97.0
-offset_bottom = -175.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = ExtResource("4_5nicn")
+[node name="Block4" type="Panel" parent="CypherBook/Background/CyphersP5/CutoutBlock"]
+visible = false
+layout_mode = 0
+offset_left = 24.0
+offset_top = 46.0
+offset_right = 70.0
+offset_bottom = 73.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jnaw2")
 
-[node name="Panel5" type="Panel" parent="CypherBook/Background/CyphersP5/SubViewportCover"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 95.0
-offset_top = 186.0
-offset_bottom = -148.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = ExtResource("4_5nicn")
+[node name="Panel" type="Panel" parent="CypherBook/Background/CyphersP5/CutoutBlock"]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 46.0
+offset_right = 181.0
+offset_bottom = 73.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hk5wq")
 
-[node name="Panel6" type="Panel" parent="CypherBook/Background/CyphersP5/SubViewportCover"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 219.0
-offset_top = 128.0
-offset_bottom = -175.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = ExtResource("4_5nicn")
+[node name="Panel2" type="Panel" parent="CypherBook/Background/CyphersP5/CutoutBlock"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 73.0
+offset_right = 117.0
+offset_bottom = 100.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hk5wq")
 
-[node name="Panel7" type="Panel" parent="CypherBook/Background/CyphersP5/SubViewportCover"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 187.0
-offset_right = -205.0
-offset_bottom = -150.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = ExtResource("4_5nicn")
+[node name="Panel3" type="Panel" parent="CypherBook/Background/CyphersP5/CutoutBlock"]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 100.0
+offset_right = 181.0
+offset_bottom = 127.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hk5wq")
 
-[node name="Panel8" type="Panel" parent="CypherBook/Background/CyphersP5/SubViewportCover"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 212.0
-offset_right = -80.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = ExtResource("4_5nicn")
+[node name="Panel4" type="Panel" parent="CypherBook/Background/CyphersP5/CutoutBlock"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 127.0
+offset_right = 134.0
+offset_bottom = 154.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hk5wq")
 
-[node name="Panel9" type="Panel" parent="CypherBook/Background/CyphersP5/SubViewportCover"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 220.0
-offset_top = 214.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = ExtResource("4_5nicn")
-
-[node name="Panel10" type="Panel" parent="CypherBook/Background/CyphersP5/SubViewportCover"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 173.0
-offset_top = 239.0
-offset_right = -33.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = ExtResource("4_5nicn")
+[node name="Panel5" type="Panel" parent="CypherBook/Background/CyphersP5/CutoutBlock"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 46.0
+offset_right = 25.0
+offset_bottom = 73.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hk5wq")
 
 [node name="CyphersP4" type="PanelContainer" parent="CypherBook/Background"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 7.0
-offset_top = 24.0
-offset_right = -264.0
-offset_bottom = -6.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -267.0
+offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_hk5wq")
+metadata/_edit_group_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CypherBook/Background/CyphersP4"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("7_f844c")
-theme_override_font_sizes/normal_font_size = 20
+theme_override_fonts/normal_font = ExtResource("10_4r6ya")
+theme_override_font_sizes/normal_font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_e33h0")
 text = "Every little hole's like a peep through the old sewing needle.
 
@@ -380,10 +361,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 265.0
-offset_top = 24.0
-offset_right = -6.0
-offset_bottom = -6.0
+offset_left = 267.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_tptjx")
@@ -392,15 +373,14 @@ metadata/_edit_group_ = true
 [node name="RichTextLabel" type="RichTextLabel" parent="CypherBook/Background/CyphersP3"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("7_f844c")
-theme_override_font_sizes/normal_font_size = 16
+theme_override_fonts/normal_font = ExtResource("10_4r6ya")
+theme_override_font_sizes/normal_font_size = 19
 theme_override_styles/normal = ExtResource("4_ye4ph")
 bbcode_enabled = true
 text = "[u]Alphabet Numbers[/u]
-
 [table=3]
-[cell]A - 1		[/cell]
-[cell]J - 10		[/cell]
+[cell]A - 1				[/cell]
+[cell]J - 10				[/cell]
 [cell]S - 19[/cell]
 [cell]B - 2[/cell]
 [cell]K - 11[/cell]
@@ -436,10 +416,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 7.0
-offset_top = 24.0
-offset_right = -264.0
-offset_bottom = -6.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -267.0
+offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_0lamr")
@@ -448,8 +428,8 @@ metadata/_edit_group_ = true
 [node name="RichTextLabel" type="RichTextLabel" parent="CypherBook/Background/CyphersP2"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("7_f844c")
-theme_override_font_sizes/normal_font_size = 20
+theme_override_fonts/normal_font = ExtResource("10_4r6ya")
+theme_override_font_sizes/normal_font_size = 16
 theme_override_styles/normal = ExtResource("4_ye4ph")
 text = "The Caesar Cipher is a way to hide a message by sliding the alphabet over!
 
@@ -462,7 +442,6 @@ It’s like using a secret alphabet that’s just moved over."
 fit_content = true
 scroll_active = false
 tab_size = 3
-horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CyphersP1" type="PanelContainer" parent="CypherBook/Background"]
@@ -470,10 +449,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 265.0
-offset_top = 24.0
-offset_right = -6.0
-offset_bottom = -6.0
+offset_left = 267.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_ikmdk")
@@ -482,14 +461,14 @@ metadata/_edit_group_ = true
 [node name="RichTextLabel" type="RichTextLabel" parent="CypherBook/Background/CyphersP1"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("7_f844c")
+theme_override_fonts/mono_font = ExtResource("10_4r6ya")
+theme_override_font_sizes/mono_font_size = 19
 theme_override_font_sizes/normal_font_size = 7
 theme_override_styles/normal = ExtResource("4_ye4ph")
 bbcode_enabled = true
-text = "[code]
-[u]MORSE CODE[/u]
+text = "[code][u]Morse Code[/u]
 [table=3]
-[cell]A .-					[/cell]      [cell]B -...					[/cell]     [cell]C -.-.[/cell]
+[cell]A .-											[/cell]      [cell]B -...										[/cell]     [cell]C -.-.[/cell]
 [cell]D -..[/cell]     [cell]E .[/cell]        [cell]F ..-.[/cell]
 [cell]G --.[/cell]     [cell]H ....[/cell]     [cell]I ..[/cell]
 
@@ -512,10 +491,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 7.0
-offset_top = 24.0
-offset_right = -264.0
-offset_bottom = -6.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -267.0
+offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_a210j")
@@ -524,8 +503,8 @@ metadata/_edit_group_ = true
 [node name="RichTextLabel" type="RichTextLabel" parent="CypherBook/Background/CyphersInstruction"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("7_f844c")
-theme_override_font_sizes/normal_font_size = 20
+theme_override_fonts/normal_font = ExtResource("10_4r6ya")
+theme_override_font_sizes/normal_font_size = 16
 theme_override_styles/normal = ExtResource("4_ye4ph")
 text = "The universe is a vast conversation. All you need is the key to listen.
 
@@ -557,10 +536,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -55.0
-offset_top = -52.0
-offset_right = -10.0
-offset_bottom = -10.0
+offset_left = -33.0
+offset_top = -37.0
+offset_right = -11.0
+offset_bottom = -11.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_yka0n")
@@ -574,9 +553,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
 theme_override_styles/focus = SubResource("StyleBoxEmpty_oxjdx")
 theme_override_styles/normal = SubResource("StyleBoxFlat_glv2v")
-text = "-->"
+text = ">"
 
 [node name="PrevPage" type="Panel" parent="CypherBook/Background"]
 layout_mode = 1
@@ -586,9 +567,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -513.0
-offset_top = -52.0
-offset_right = -468.0
-offset_bottom = -10.0
+offset_top = -37.0
+offset_right = -491.0
+offset_bottom = -11.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_e33h0")
@@ -599,22 +580,25 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -4.0
+offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
 theme_override_styles/focus = SubResource("StyleBoxEmpty_4r6ya")
 theme_override_styles/normal = SubResource("StyleBoxFlat_glv2v")
-text = "<--"
+text = "<"
 
 [node name="CloseButton" type="Panel" parent="CypherBook"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -22.0
-offset_top = 6.0
-offset_right = -6.0
-offset_bottom = 22.0
+offset_left = 4.0
+offset_right = 20.0
+offset_bottom = 16.0
 grow_horizontal = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_5nicn")
 metadata/_edit_group_ = true
@@ -626,6 +610,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l0fql")
 theme_override_styles/normal = SubResource("StyleBoxFlat_qmrs1")
 
 [node name="Label" type="Label" parent="CypherBook/CloseButton"]
@@ -637,7 +622,7 @@ offset_top = -4.0
 offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.82606, 0.82606, 0.82606, 1)
+theme_override_colors/font_color = Color(0.955963, 0.955963, 0.955963, 1)
 theme_override_fonts/font = ExtResource("9_ygn38")
 theme_override_font_sizes/font_size = 16
 text = "X"
