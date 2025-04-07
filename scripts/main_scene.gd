@@ -14,7 +14,7 @@ func _ready() -> void:
 	# Connect answer submission signal
 	answer_popup.answer_submitted.connect(_on_answer_submitted)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_cancel"): 
 		if !is_options_menu_open:
 			ui.hide()

@@ -20,6 +20,3 @@ func _on_confirm_button_pressed() -> void:
 	TransitionScreen.transition()
 	await TransitionScreen.on_transition_finished
 	self.hide()
-
-
-
