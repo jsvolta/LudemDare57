@@ -8,13 +8,13 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dn62s"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wp3ly"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_88f3a"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i43ux"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i43ux"]
 content_margin_left = 10.0
-bg_color = Color(0.180392, 0.180392, 0.180392, 1)
+bg_color = Color(0.121569, 0.121569, 0.227451, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -35,12 +35,12 @@ anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -63.0
 offset_right = 90.0
-offset_bottom = 39.0
+offset_bottom = 40.0
 grow_horizontal = 0
-theme_override_colors/font_color = Color(0.596078, 0.596078, 0.596078, 1)
+theme_override_colors/font_color = Color(0.992157, 0.964706, 0.890196, 1)
 theme_override_fonts/font = ExtResource("1_dn62s")
 theme_override_font_sizes/font_size = 18
-theme_override_styles/focus = SubResource("StyleBoxEmpty_wp3ly")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_88f3a")
 theme_override_styles/hover = ExtResource("3_88f3a")
 theme_override_styles/pressed = ExtResource("3_li4k8")
 theme_override_styles/normal = ExtResource("4_88f3a")
@@ -50,6 +50,8 @@ text = "Transmit"
 layout_mode = 0
 offset_right = 360.0
 offset_bottom = 40.0
+theme_override_colors/font_placeholder_color = Color(0.992157, 0.964706, 0.890196, 0.45098)
+theme_override_colors/font_color = Color(0.992157, 0.964706, 0.890196, 1)
 theme_override_fonts/font = ExtResource("1_dn62s")
 theme_override_font_sizes/font_size = 18
 theme_override_styles/focus = SubResource("StyleBoxEmpty_i43ux")
