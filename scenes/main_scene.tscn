@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://rv7sfydpqe5r"]
+[gd_scene load_steps=25 format=3 uid="uid://rv7sfydpqe5r"]
 
 [ext_resource type="Script" uid="uid://c01w5qw4qjcg7" path="res://scripts/main_scene.gd" id="1_w2twt"]
 [ext_resource type="PackedScene" uid="uid://l7a4wokvwwmn" path="res://scenes/backgrounds/star_background.tscn" id="2_6wevv"]
@@ -12,9 +12,36 @@
 [ext_resource type="AudioStream" uid="uid://cqh52eyvt0weu" path="res://assets/music/start_menu.wav" id="8_18nlu"]
 [ext_resource type="FontFile" uid="uid://bnl2tsb2chuqu" path="res://addons/google_fonts/VT323/VT323-Regular.ttf" id="9_e1cbu"]
 [ext_resource type="Script" uid="uid://bv11w867s6ndn" path="res://scripts/ui/range_text.gd" id="10_mngbo"]
+[ext_resource type="PackedScene" uid="uid://b04slc5q1mn10" path="res://scenes/sprites/toaster.tscn" id="11_4w45t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4w45t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r6p65"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_si52b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_01n6w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6u1mn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bcnxi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7nt27"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k6f3i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xdqt8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_adb74"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_58gk3"]
 
 [node name="MainScene" type="Node2D"]
 script = ExtResource("1_w2twt")
+
+[node name="Toaster" parent="." instance=ExtResource("11_4w45t")]
+position = Vector2(904, 688)
+scale = Vector2(0.6, 0.6)
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
@@ -90,7 +117,7 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -208.0
+offset_left = -213.0
 offset_top = 8.0
 offset_right = -8.0
 offset_bottom = 48.0
@@ -102,6 +129,28 @@ text = "Range: 1.384 Mly"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("10_mngbo")
+
+[node name="ToasterButton" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = 808.0
+offset_top = 528.0
+offset_right = 1008.0
+offset_bottom = 536.0
+scale = Vector2(0.948127, 19.9834)
+tooltip_text = "RADIO"
+theme_override_fonts/font = ExtResource("9_e1cbu")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4w45t")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_r6p65")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_si52b")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_01n6w")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_6u1mn")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_bcnxi")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_7nt27")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_k6f3i")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_xdqt8")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_adb74")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_58gk3")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_18nlu")
@@ -115,4 +164,6 @@ visible = false
 [connection signal="alien_message" from="." to="UI/AlienMessage" method="_on_main_scene_alien_message"]
 [connection signal="cypher_changed" from="." to="UI/AlienCyphers" method="_on_main_scene_cypher_changed"]
 [connection signal="range_changed" from="." to="UI/RangeText" method="_on_main_scene_range_changed"]
+[connection signal="toaster_cliked" from="." to="Toaster" method="_on_main_scene_toaster_cliked"]
 [connection signal="message_read" from="UI/AlienMessage" to="." method="on_message_read"]
+[connection signal="button_down" from="UI/ToasterButton" to="." method="_on_toaster_button_button_down"]

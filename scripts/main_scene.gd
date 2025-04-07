@@ -3,9 +3,12 @@ extends Node2D
 signal cypher_changed(image_path: String)
 signal alien_message(text)
 signal range_changed(light_years: float)
+signal toaster_cliked()
 
 @onready var answer_popup = $UI/AnswerPopup
 @onready var options_menu: CanvasLayer = $OptionsMenu
+@onready var alien_cypher: Control = $UI/AlienCyphers
+@onready var toaster_sprite = $Toaster/AnimatedSprite2D
 var is_options_menu_open: bool = false
 
 # Called when the node enters the scene tree for the first time.
@@ -26,6 +29,8 @@ func _process(_delta: float) -> void:
 func _load_level():
 	State.update_current_level_data()
 	cypher_changed.emit(State.current_level_data[3])
+	
+	toaster_sprite.play("flash")
 
 	# Random range
 	range_changed.emit(randf_range(State.communication_range, 
@@ -40,7 +45,7 @@ func _on_answer_submitted(answer: String) -> void:
 	if answer.to_upper() == State.current_level_data[0].to_upper():
 		print("Correct answer!")
 		State.level_index += 1
-		# TODO: hide cypher and book
+		alien_cypher.hide()
 		alien_message.emit(State.current_level_data[1])
 
 	else:
@@ -56,3 +61,8 @@ func on_message_read():
 		TransitionScreen.transition()
 		await TransitionScreen.on_transition_finished
 		_load_level()
+
+func _on_toaster_button_button_down() -> void:
+	toaster_cliked.emit()
+	alien_cypher.show()
+	alien_cypher.set_global_position(Vector2(722, 175))

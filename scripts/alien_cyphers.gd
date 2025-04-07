@@ -14,7 +14,7 @@ var panel_size := Vector2()
 @onready var image_panel: Panel = $CypherPage/Panel
 
 func _ready() -> void:
-	self.visible = true
+	hide()
 
 # Moving the book
 func _input(event):
