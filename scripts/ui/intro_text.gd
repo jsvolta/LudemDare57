@@ -10,11 +10,10 @@ Little do you know, that radio isn't just a relic, and the cypher book isn't jus
 """
 
 func _ready() -> void:
-	confirm_button.hide()
+	show()
 	anchors_preset = Control.PRESET_FULL_RECT
 	TextTransitions.typewriter(message_box, final_message, 60)
 	await TextTransitions.finished_typing
-	confirm_button.show()
 
 func _on_confirm_button_pressed() -> void:
 	TransitionScreen.transition()

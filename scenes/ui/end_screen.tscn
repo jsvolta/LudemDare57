@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dayp7hg10amxv"]
+[gd_scene load_steps=9 format=3 uid="uid://dayp7hg10amxv"]
 
 [ext_resource type="Script" uid="uid://do3ckgmtilqa3" path="res://scripts/ui/end_screen.gd" id="1_n8r4t"]
+[ext_resource type="PackedScene" uid="uid://l7a4wokvwwmn" path="res://scenes/backgrounds/star_background.tscn" id="2_eok5x"]
 [ext_resource type="StyleBox" uid="uid://di8fh5njrd5bo" path="res://assets/styleBoxes/default_hover_button.tres" id="3_dlhjq"]
 [ext_resource type="AudioStream" uid="uid://4s4kumm70ra4" path="res://assets/music/end_screen2.wav" id="3_wgyui"]
 [ext_resource type="FontFile" uid="uid://bnl2tsb2chuqu" path="res://addons/google_fonts/VT323/VT323-Regular.ttf" id="4_53v5j"]
@@ -18,45 +19,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_n8r4t")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="StarBackground" parent="." instance=ExtResource("2_eok5x")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.0588235, 0.0588235, 0.109804, 1)
-
-[node name="Stars" type="CPUParticles2D" parent="."]
-position = Vector2(640, 360)
-amount = 300
-lifetime = 8.0
-preprocess = 8.0
-emission_shape = 3
-emission_rect_extents = Vector2(640, 360)
-direction = Vector2(0, 1)
-spread = 10.0
-gravity = Vector2(0, 0)
-initial_velocity_min = 10.0
-initial_velocity_max = 30.0
-scale_amount_max = 3.0
-color = Color(1, 1, 1, 0.7)
-
-[node name="FastStars" type="CPUParticles2D" parent="."]
-position = Vector2(640, 360)
-amount = 50
-lifetime = 4.0
-preprocess = 4.0
-emission_shape = 3
-emission_rect_extents = Vector2(640, 360)
-direction = Vector2(0, 1)
-spread = 5.0
-gravity = Vector2(0, 0)
-initial_velocity_min = 50.0
-initial_velocity_max = 100.0
-scale_amount_min = 2.0
-scale_amount_max = 4.0
-color = Color(1, 1, 1, 0.9)
 
 [node name="QuitButton" type="Button" parent="."]
 layout_mode = 1
