@@ -1,5 +1,6 @@
-[gd_scene load_steps=20 format=3 uid="uid://dkyrv4q16lrvq"]
+[gd_scene load_steps=24 format=3 uid="uid://dkyrv4q16lrvq"]
 
+[ext_resource type="Texture2D" uid="uid://dbchabqfp8ipr" path="res://assets/sprites/book_hover.png" id="1_niwfc"]
 [ext_resource type="Texture2D" uid="uid://dnrdu0ojodnau" path="res://assets/sprites/book.png" id="1_qmrs1"]
 [ext_resource type="Script" uid="uid://co21kwytkdlx4" path="res://scripts/cypher_book.gd" id="1_xc2ce"]
 [ext_resource type="Script" uid="uid://bh8vv0fids844" path="res://scripts/book_cutout.gd" id="2_cutb7"]
@@ -7,9 +8,19 @@
 [ext_resource type="StyleBox" uid="uid://daog0kpj5080b" path="res://assets/styleBoxes/book_page_style.tres" id="4_5nicn"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_niwfc"]
-texture = ExtResource("1_qmrs1")
+texture = ExtResource("1_niwfc")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f844c"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ygn38"]
+texture = ExtResource("1_niwfc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f844c"]
+texture = ExtResource("1_niwfc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ye4ph"]
+texture = ExtResource("1_niwfc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qmrs1"]
+texture = ExtResource("1_qmrs1")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_niwfc"]
 
@@ -48,17 +59,16 @@ layout_mode = 3
 anchors_preset = 0
 metadata/_edit_horizontal_guides_ = [3.0]
 
-[node name="BookOpen" type="PanelContainer" parent="."]
-layout_mode = 1
-offset_right = 119.0
-offset_bottom = 60.0
-scale = Vector2(1.5, 1.5)
-theme_override_styles/panel = SubResource("StyleBoxTexture_niwfc")
-metadata/_edit_group_ = true
-
-[node name="Button" type="Button" parent="BookOpen"]
+[node name="Button" type="Button" parent="."]
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_f844c")
+offset_right = 119.0
+offset_bottom = 41.0
+scale = Vector2(2, 2)
+theme_override_styles/focus = SubResource("StyleBoxTexture_niwfc")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_ygn38")
+theme_override_styles/hover = SubResource("StyleBoxTexture_f844c")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ye4ph")
+theme_override_styles/normal = SubResource("StyleBoxTexture_qmrs1")
 
 [node name="CypherBook" type="Control" parent="."]
 visible = false
@@ -544,7 +554,7 @@ text = "X"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="BookOpen/Button" to="CypherBook" method="_on_open_book_pressed"]
+[connection signal="pressed" from="Button" to="CypherBook" method="_on_open_book_pressed"]
 [connection signal="mouse_entered" from="CypherBook/Background/TitleBar" to="CypherBook" method="_on_title_bar_mouse_entered"]
 [connection signal="mouse_exited" from="CypherBook/Background/TitleBar" to="CypherBook" method="_on_title_bar_mouse_exited"]
 [connection signal="pressed" from="CypherBook/Background/NextPage/Button" to="CypherBook" method="_on_next_page_pressed"]
