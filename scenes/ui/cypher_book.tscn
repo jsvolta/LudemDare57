@@ -301,11 +301,14 @@ metadata/_edit_group_ = true
 [node name="RichTextLabel" type="RichTextLabel" parent="CypherBook/Background/CyphersP4"]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_e33h0")
-text = "Page 4"
+text = "Every little hole's like a peep through the old sewing needle.
+
+And each of those scrambled letters? Don't worry, they're secret codes waiting to be discovered.
+
+Together they become stars that fall into place on a clear night."
 fit_content = true
 scroll_active = false
 tab_size = 3
-horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CyphersP3" type="PanelContainer" parent="CypherBook/Background"]
