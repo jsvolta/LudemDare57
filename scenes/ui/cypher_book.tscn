@@ -374,12 +374,12 @@ metadata/_edit_group_ = true
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("10_4r6ya")
-theme_override_font_sizes/normal_font_size = 19
+theme_override_font_sizes/normal_font_size = 20
 theme_override_styles/normal = ExtResource("4_ye4ph")
 bbcode_enabled = true
 text = "[u]Alphabet Numbers[/u]
 [table=3]
-[cell]A - 1				[/cell]
+[cell]A - 1			[/cell]
 [cell]J - 10				[/cell]
 [cell]S - 19[/cell]
 [cell]B - 2[/cell]
@@ -445,6 +445,7 @@ tab_size = 3
 vertical_alignment = 1
 
 [node name="CyphersP1" type="PanelContainer" parent="CypherBook/Background"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -462,13 +463,13 @@ metadata/_edit_group_ = true
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/mono_font = ExtResource("10_4r6ya")
-theme_override_font_sizes/mono_font_size = 19
+theme_override_font_sizes/mono_font_size = 21
 theme_override_font_sizes/normal_font_size = 7
 theme_override_styles/normal = ExtResource("4_ye4ph")
 bbcode_enabled = true
 text = "[code][u]Morse Code[/u]
 [table=3]
-[cell]A .-											[/cell]      [cell]B -...										[/cell]     [cell]C -.-.[/cell]
+[cell]A .-												[/cell]      [cell]B -...									[/cell]     [cell]C -.-.[/cell]
 [cell]D -..[/cell]     [cell]E .[/cell]        [cell]F ..-.[/cell]
 [cell]G --.[/cell]     [cell]H ....[/cell]     [cell]I ..[/cell]
 
