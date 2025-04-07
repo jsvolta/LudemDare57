@@ -64,19 +64,19 @@ var level_data = [
 		"Void Exploration",
 		"The starts are now being filled with your communications. We can hear you, and so can the void.",
 		4,
-		""
+		"res://assets/sprites/cyphers/level_4_cypher_1.png"
 	],
 	[
 		"Bridge Building",
 		"We intercepted your imagination. Chaotic. Brilliant. Unfiltered. Don't stop, you're building a bridge.",
 		4,
-		""
+		"res://assets/sprites/cyphers/level_4_cypher_2.png"
 	],
 	[
 		"Unfiltered Sound",
 		"You cracked the silence with a spark. We're listening. And you're closer than you think.",
 		4,
-		""
+		"res://assets/sprites/cyphers/level_4_cypher_3.png"
 	],
 	[
 		"Questions and Voices",
@@ -100,7 +100,7 @@ var level_data = [
 var current_level_data: Array
 
 var level_index: int = 1
-var max_level: int = 3
+var max_level: int = 4
 var communication_range: float = 1.384
 var volume_slider_value: float = 0.5
 
