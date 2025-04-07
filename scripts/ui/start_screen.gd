@@ -10,4 +10,4 @@ func _on_start_button_pressed() -> void:
 	# switches to main game scene
 	TransitionScreen.transition()
 	await TransitionScreen.on_transition_finished
-	get_tree().change_scene_to_file("res://scenes/main_scene.tscn") 
+	get_tree().change_scene_to_file("res://scenes/main_scene.tscn")
