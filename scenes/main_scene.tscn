@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://rv7sfydpqe5r"]
 
 [ext_resource type="Script" uid="uid://c01w5qw4qjcg7" path="res://scripts/main_scene.gd" id="1_w2twt"]
-[ext_resource type="PackedScene" path="res://scenes/backgrounds/star_background.tscn" id="2_6wevv"]
+[ext_resource type="PackedScene" uid="uid://l7a4wokvwwmn" path="res://scenes/backgrounds/star_background.tscn" id="2_6wevv"]
 [ext_resource type="Texture2D" uid="uid://xf0scy2t4h23" path="res://assets/sprites/background_overlay.png" id="3_e1cbu"]
 [ext_resource type="PackedScene" uid="uid://cpt3skq058fdp" path="res://scenes/ui/answer_popup.tscn" id="4_pu3yx"]
 [ext_resource type="PackedScene" uid="uid://dkyrv4q16lrvq" path="res://scenes/ui/cypher_book.tscn" id="5_gubc5"]
