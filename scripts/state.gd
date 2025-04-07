@@ -82,25 +82,25 @@ var level_data = [
 		"Questions and Voices",
 		"You are the conversation. You are the question and the key. We hear you. And now… you hear us too.",
 		5,
-		""
+		"res://assets/sprites/cyphers/level_5_cypher_1.png"
 	],
 	[
 		"A Missing Voice",
 		"You were never alone. You just forgot how to listen. The universe missed your voice.",
 		5,
-		""
+		"res://assets/sprites/cyphers/level_5_cypher_2.png"
 	],
 	[
 		"Distant Memories",
 		"You are not lost. You are unfolding. The cosmos leans closer when you begin to remember.",
 		5,
-		""
+		"res://assets/sprites/cyphers/level_5_cypher_3.png"
 	]
 ]
 var current_level_data: Array
 
 var level_index: int = 1
-var max_level: int = 4
+var max_level: int = 5
 var communication_range: float = 1.384
 var volume_slider_value: float = 0.5
 

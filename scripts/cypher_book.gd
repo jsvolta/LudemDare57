@@ -24,6 +24,9 @@ func _ready():
 		],[	#2
 			$Background/CyphersP4, 				#4 - 
 			$Background/CyphersP5 				#5 - Page Cutouts
+		],[ #4
+			$Background/CyphersP6,
+			$Background/CyphersP7
 		]
 	]
 	_show_page(current_page)

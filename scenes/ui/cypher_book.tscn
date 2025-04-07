@@ -50,14 +50,6 @@ shadow_color = Color(0, 0, 0, 0)
 shadow_size = 1
 shadow_offset = Vector2(0, 2)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jnaw2"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jnaw2"]
-bg_color = Color(1, 0.270588, 0.6, 0.862745)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hk5wq"]
-bg_color = Color(0.992157, 0.964706, 0.890196, 1)
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hk5wq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e33h0"]
@@ -71,6 +63,14 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tptjx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jnaw2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jnaw2"]
+bg_color = Color(1, 0.270588, 0.6, 0.862745)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hk5wq"]
+bg_color = Color(0.992157, 0.964706, 0.890196, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0lamr"]
 
@@ -184,7 +184,103 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_4r6ya")
 
+[node name="CyphersP6" type="PanelContainer" parent="CypherBook/Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -267.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_hk5wq")
+metadata/_edit_group_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CypherBook/Background/CyphersP6"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/mono_font = ExtResource("10_4r6ya")
+theme_override_font_sizes/normal_font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_e33h0")
+bbcode_enabled = true
+text = "[code][u]Vigenère Cipher[/u]
+Key: STAR
+
+Each letter is shifted based on the the key
+a = 0 letter shift
+z = 25 letter shift
+
+[table=11]
+[cell]H[/cell] [cell]E[/cell] [cell]L[/cell] [cell]L[/cell] [cell]O[/cell]  [cell][/cell]  [cell]W[/cell] [cell]O[/cell] [cell]R[/cell] [cell]L[/cell] [cell]D[/cell]
+[cell]S[/cell] [cell]T[/cell] [cell]A[/cell] [cell]R[/cell] [cell]S[/cell]  [cell][/cell]  [cell]T[/cell] [cell]A[/cell] [cell]R[/cell] [cell]S[/cell] [cell]T[/cell]
+[cell]Z[/cell] [cell]X[/cell] [cell]L[/cell] [cell]C[/cell] [cell]G[/cell]  [cell][/cell]  [cell]P[/cell] [cell]O[/cell] [cell]I[/cell] [cell]D[/cell] [cell]W[/cell]
+[/table]
+[/code]
+"
+fit_content = true
+scroll_active = false
+tab_size = 3
+vertical_alignment = 1
+
+[node name="CyphersP7" type="PanelContainer" parent="CypherBook/Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 267.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_tptjx")
+metadata/_edit_group_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CypherBook/Background/CyphersP7"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("10_4r6ya")
+theme_override_font_sizes/normal_font_size = 20
+theme_override_styles/normal = ExtResource("4_ye4ph")
+bbcode_enabled = true
+text = "[u]Alphabet Numbers[/u]
+[table=3]
+[cell]A - 0         [/cell]
+[cell]J - 9         [/cell]
+[cell]S - 18[/cell]
+[cell]B - 1[/cell]
+[cell]K - 10[/cell]
+[cell]T - 19[/cell]
+[cell]C - 2[/cell]
+[cell]L - 11[/cell]
+[cell]U - 20[/cell]
+[cell]D - 3[/cell]
+[cell]M - 12[/cell]
+[cell]V - 21[/cell]
+[cell]E - 4[/cell]
+[cell]N - 13[/cell]
+[cell]W - 22[/cell]
+[cell]F - 5[/cell]
+[cell]O - 14[/cell]
+[cell]X - 23[/cell]
+[cell]G - 6[/cell]
+[cell]P - 15[/cell]
+[cell]Y - 24[/cell]
+[cell]H - 7[/cell]
+[cell]Q - 16[/cell]
+[cell]Z - 25[/cell]
+[cell]I - 8[/cell]
+[cell]R - 17[/cell]
+[/table]"
+fit_content = true
+scroll_active = false
+tab_size = 3
+vertical_alignment = 1
+
 [node name="CyphersP5" type="Panel" parent="CypherBook/Background"]
+visible = false
 visibility_layer = 2
 layout_mode = 1
 anchors_preset = 15
@@ -233,7 +329,7 @@ script = ExtResource("2_cutb7")
 handle_input_locally = false
 canvas_cull_mask = 4294967293
 size = Vector2i(170, 108)
-render_target_update_mode = 4
+render_target_update_mode = 0
 script = ExtResource("2_e33h0")
 
 [node name="Camera2D" type="Camera2D" parent="CypherBook/Background/CyphersP5/BookCutout/SubViewport"]
@@ -327,6 +423,7 @@ offset_bottom = 73.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_hk5wq")
 
 [node name="CyphersP4" type="PanelContainer" parent="CypherBook/Background"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -357,6 +454,7 @@ tab_size = 3
 vertical_alignment = 1
 
 [node name="CyphersP3" type="PanelContainer" parent="CypherBook/Background"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -379,32 +477,32 @@ theme_override_styles/normal = ExtResource("4_ye4ph")
 bbcode_enabled = true
 text = "[u]Alphabet Numbers[/u]
 [table=3]
-[cell]A - 1			[/cell]
-[cell]J - 10				[/cell]
-[cell]S - 19[/cell]
-[cell]B - 2[/cell]
-[cell]K - 11[/cell]
-[cell]T - 20[/cell]
-[cell]C - 3[/cell]
-[cell]L - 12[/cell]
-[cell]U - 21[/cell]
-[cell]D - 4[/cell]
-[cell]M - 13[/cell]
-[cell]V - 22[/cell]
-[cell]E - 5[/cell]
-[cell]N - 14[/cell]
-[cell]W - 23[/cell]
-[cell]F - 6[/cell]
-[cell]O - 15[/cell]
-[cell]X - 24[/cell]
-[cell]G - 7[/cell]
-[cell]P - 16[/cell]
-[cell]Y - 25[/cell]
-[cell]H - 8[/cell]
-[cell]Q - 17[/cell]
-[cell]Z - 26[/cell]
-[cell]I - 9[/cell]
-[cell]R - 18[/cell]
+[cell]A - 0         [/cell]
+[cell]J - 9         [/cell]
+[cell]S - 18[/cell]
+[cell]B - 1[/cell]
+[cell]K - 10[/cell]
+[cell]T - 19[/cell]
+[cell]C - 2[/cell]
+[cell]L - 11[/cell]
+[cell]U - 20[/cell]
+[cell]D - 3[/cell]
+[cell]M - 12[/cell]
+[cell]V - 21[/cell]
+[cell]E - 4[/cell]
+[cell]N - 13[/cell]
+[cell]W - 22[/cell]
+[cell]F - 5[/cell]
+[cell]O - 14[/cell]
+[cell]X - 23[/cell]
+[cell]G - 6[/cell]
+[cell]P - 15[/cell]
+[cell]Y - 24[/cell]
+[cell]H - 7[/cell]
+[cell]Q - 16[/cell]
+[cell]Z - 25[/cell]
+[cell]I - 8[/cell]
+[cell]R - 17[/cell]
 [/table]"
 fit_content = true
 scroll_active = false
@@ -412,6 +510,7 @@ tab_size = 3
 vertical_alignment = 1
 
 [node name="CyphersP2" type="PanelContainer" parent="CypherBook/Background"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -488,6 +587,7 @@ tab_size = 2
 vertical_alignment = 1
 
 [node name="CyphersInstruction" type="PanelContainer" parent="CypherBook/Background"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
