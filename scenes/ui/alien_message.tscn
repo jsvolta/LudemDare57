@@ -27,8 +27,6 @@ offset_bottom = 23.0
 theme_override_fonts/font = ExtResource("2_bkdus")
 text = "\"Bubble wrap SOS! We require immediate popping assistance. Your mission is loud and clear.\""
 label_settings = SubResource("LabelSettings_bkdus")
-horizontal_alignment = 1
-vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="ConfirmButton" type="Button" parent="."]
