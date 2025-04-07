@@ -1,15 +1,15 @@
-[gd_scene load_steps=19 format=3 uid="uid://dkyrv4q16lrvq"]
+[gd_scene load_steps=20 format=3 uid="uid://dkyrv4q16lrvq"]
 
+[ext_resource type="Texture2D" uid="uid://dnrdu0ojodnau" path="res://assets/sprites/book.png" id="1_qmrs1"]
 [ext_resource type="Script" uid="uid://co21kwytkdlx4" path="res://scripts/cypher_book.gd" id="1_xc2ce"]
 [ext_resource type="Script" uid="uid://bh8vv0fids844" path="res://scripts/book_cutout.gd" id="2_cutb7"]
 [ext_resource type="Script" uid="uid://ccwk577th7m4i" path="res://scripts/sub_viewport.gd" id="2_e33h0"]
 [ext_resource type="StyleBox" uid="uid://daog0kpj5080b" path="res://assets/styleBoxes/book_page_style.tres" id="4_5nicn"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uu6xs"]
-bg_color = Color(0.282353, 0.745098, 0, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_niwfc"]
+texture = ExtResource("1_qmrs1")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3dxm6"]
-bg_color = Color(0.202558, 0.452076, 0.24796, 1)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f844c"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_niwfc"]
 
@@ -49,20 +49,19 @@ anchors_preset = 0
 metadata/_edit_horizontal_guides_ = [3.0]
 
 [node name="BookOpen" type="PanelContainer" parent="."]
-layout_mode = 0
-offset_left = 383.0
-offset_top = 176.0
-offset_right = 437.0
-offset_bottom = 252.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_uu6xs")
+layout_mode = 1
+offset_right = 119.0
+offset_bottom = 60.0
+scale = Vector2(1.5, 1.5)
+theme_override_styles/panel = SubResource("StyleBoxTexture_niwfc")
 metadata/_edit_group_ = true
 
 [node name="Button" type="Button" parent="BookOpen"]
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_3dxm6")
-text = "BOOK"
+theme_override_styles/normal = SubResource("StyleBoxEmpty_f844c")
 
 [node name="CypherBook" type="Control" parent="."]
+visible = false
 visibility_layer = 2
 layout_mode = 3
 anchors_preset = 0
@@ -139,7 +138,7 @@ script = ExtResource("2_cutb7")
 handle_input_locally = false
 canvas_cull_mask = 4294967293
 size = Vector2i(253, 362)
-render_target_update_mode = 4
+render_target_update_mode = 0
 script = ExtResource("2_e33h0")
 
 [node name="Camera2D" type="Camera2D" parent="CypherBook/Background/CyphersP5/BookCutout/SubViewport"]
