@@ -13,6 +13,7 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i43ux"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i43ux"]
+content_margin_left = 10.0
 bg_color = Color(0.180392, 0.180392, 0.180392, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
