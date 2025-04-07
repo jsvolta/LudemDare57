@@ -1,4 +1,4 @@
-[gd_scene load_steps=0 format=3 uid="uid://l7a4wokvwwmn"]
+[gd_scene format=3 uid="uid://l7a4wokvwwmn"]
 
 [node name="StarBackground" type="Control"]
 z_index = -2
