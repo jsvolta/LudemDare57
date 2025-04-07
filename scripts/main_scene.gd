@@ -2,6 +2,7 @@ extends Node2D
 
 signal cypher_changed(image_path: String)
 signal alien_message(text)
+signal range_changed(light_years: float)
 
 @onready var answer_popup = $UI/AnswerPopup
 @onready var options_menu: CanvasLayer = $OptionsMenu
@@ -25,6 +26,10 @@ func _process(_delta: float) -> void:
 func _load_level():
 	State.update_current_level_data()
 	cypher_changed.emit(State.current_level_data[3])
+
+	# Random range
+	range_changed.emit(randf_range(State.range, 
+						(State.range * State.current_level_data[2])))
 	
 func _end_game():
 	get_tree().change_scene_to_file("res://scenes/ui/end_screen.tscn") 

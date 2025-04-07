@@ -101,6 +101,7 @@ var current_level_data: Array
 
 var level_index: int = 1
 var max_level: int = 3
+var range: float = 1.384
 
 func _ready() -> void:
 	self.level_data.shuffle();
