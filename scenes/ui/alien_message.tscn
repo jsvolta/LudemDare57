@@ -1,33 +1,53 @@
-[gd_scene load_steps=7 format=3 uid="uid://b2g6dqecwtta"]
+[gd_scene load_steps=9 format=3 uid="uid://b2g6dqecwtta"]
 
 [ext_resource type="Script" uid="uid://cwo7ip73l2prd" path="res://scripts/ui/alien_message.gd" id="1_cigxx"]
 [ext_resource type="FontFile" uid="uid://bediy5b4ickqs" path="res://addons/google_fonts/VT323/default_font.tres" id="2_bkdus"]
 [ext_resource type="FontFile" uid="uid://cqxhyfpnilyy0" path="res://addons/google_fonts/Silkscreen/Silkscreen-Regular.ttf" id="2_bokcd"]
+[ext_resource type="StyleBox" uid="uid://di8fh5njrd5bo" path="res://assets/styleBoxes/default_hover_button.tres" id="4_axe4r"]
+[ext_resource type="StyleBox" uid="uid://yinxxw3gnl2s" path="res://assets/styleBoxes/default_pressed_button.tres" id="5_2qwh3"]
+[ext_resource type="StyleBox" uid="uid://bsettx4eyj8yt" path="res://assets/styleBoxes/default_button.tres" id="6_eiwit"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bokcd"]
-bg_color = Color(0.114897, 0.114897, 0.114897, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jpcpy"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.121569, 0.121569, 0.227451, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.0746453, 0.074611, 0.152697, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+shadow_color = Color(0.017913, 0.0178931, 0.054027, 1)
+shadow_size = 5
+shadow_offset = Vector2(-1, 0)
 
-[sub_resource type="LabelSettings" id="LabelSettings_bkdus"]
-font = ExtResource("2_bokcd")
-font_size = 18
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bkdus"]
-bg_color = Color(0.381703, 0.381703, 0.381703, 1)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_axe4r"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
 
 [node name="AlienMessage" type="Panel"]
 offset_right = 450.0
 offset_bottom = 160.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_bokcd")
+theme_override_styles/panel = SubResource("StyleBoxFlat_jpcpy")
 script = ExtResource("1_cigxx")
 
-[node name="MessageText" type="Label" parent="."]
+[node name="MessageText" type="RichTextLabel" parent="."]
 layout_mode = 0
 offset_right = 450.0
-offset_bottom = 23.0
-theme_override_fonts/font = ExtResource("2_bkdus")
+offset_bottom = 115.0
+theme_override_colors/default_color = Color(0.992157, 0.964706, 0.890196, 1)
+theme_override_fonts/normal_font = ExtResource("2_bkdus")
+theme_override_font_sizes/normal_font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxEmpty_axe4r")
 text = "\"Bubble wrap SOS! We require immediate popping assistance. Your mission is loud and clear.\""
-label_settings = SubResource("LabelSettings_bkdus")
-autowrap_mode = 3
+scroll_active = false
 
 [node name="ConfirmButton" type="Button" parent="."]
 layout_mode = 1
@@ -37,14 +57,17 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -35.5
-offset_top = -38.0
+offset_top = -41.0
 offset_right = 35.5
-offset_bottom = -6.0
+offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_colors/font_color = Color(0.992157, 0.964706, 0.890196, 1)
 theme_override_fonts/font = ExtResource("2_bokcd")
 theme_override_font_sizes/font_size = 18
-theme_override_styles/normal = SubResource("StyleBoxFlat_bkdus")
+theme_override_styles/hover = ExtResource("4_axe4r")
+theme_override_styles/pressed = ExtResource("5_2qwh3")
+theme_override_styles/normal = ExtResource("6_eiwit")
 text = "Ack"
 
 [connection signal="pressed" from="ConfirmButton" to="." method="_on_confirm_button_pressed"]
