@@ -185,6 +185,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_4r6ya")
 
 [node name="CyphersP6" type="PanelContainer" parent="CypherBook/Background"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -213,7 +214,7 @@ a = 0 letter shift
 z = 25 letter shift
 
 [table=11]
-[cell]H[/cell] [cell]E[/cell] [cell]L[/cell] [cell]L[/cell] [cell]O[/cell]  [cell][/cell]  [cell]W[/cell] [cell]O[/cell] [cell]R[/cell] [cell]L[/cell] [cell]D[/cell]
+[cell]H  [/cell] [cell]E  [/cell] [cell]L  [/cell] [cell]L  [/cell] [cell]O  [/cell]   [cell] [/cell]  [cell]W  [/cell] [cell]O  [/cell] [cell]R  [/cell] [cell]L  [/cell] [cell]D[/cell]
 [cell]S[/cell] [cell]T[/cell] [cell]A[/cell] [cell]R[/cell] [cell]S[/cell]  [cell][/cell]  [cell]T[/cell] [cell]A[/cell] [cell]R[/cell] [cell]S[/cell] [cell]T[/cell]
 [cell]Z[/cell] [cell]X[/cell] [cell]L[/cell] [cell]C[/cell] [cell]G[/cell]  [cell][/cell]  [cell]P[/cell] [cell]O[/cell] [cell]I[/cell] [cell]D[/cell] [cell]W[/cell]
 [/table]
@@ -225,6 +226,7 @@ tab_size = 3
 vertical_alignment = 1
 
 [node name="CyphersP7" type="PanelContainer" parent="CypherBook/Background"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -510,7 +512,6 @@ tab_size = 3
 vertical_alignment = 1
 
 [node name="CyphersP2" type="PanelContainer" parent="CypherBook/Background"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -535,7 +536,7 @@ text = "The Caesar Cipher is a way to hide a message by sliding the alphabet ove
 F 	->	A
 G 	->	B
 H 	->	C
- …and so on!
+and so on!
 
 It’s like using a secret alphabet that’s just moved over."
 fit_content = true
