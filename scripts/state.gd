@@ -56,13 +56,13 @@ var level_data = [
 	],
 	[
 		"Browser History",
-		"Your browser history raised eyebrows. And questions. Mostly awe. Keep digging—you're onto something.",
+		"Your browser history raised eyebrows. And questions. Mostly awe. Keep digging, you're onto something.",
 		3,
 		"res://assets/sprites/cyphers/level_3_cypher_3.png"
 	],
 	[
 		"Void Exploration",
-		"The starts are now being filled with your communications. We can hear you, and so can the void.",
+		"The stars are now being filled with your communications. We can hear you, and so can the void.",
 		4,
 		"res://assets/sprites/cyphers/level_4_cypher_1.png"
 	],
@@ -92,7 +92,7 @@ var level_data = [
 	],
 	[
 		"Distant Memories",
-		"You are not lost. You are unfolding. The cosmos leans closer when you begin to remember.",
+		"You are not lost. You are unfolding. The cosmos lean closer when you begin to remember.",
 		5,
 		"res://assets/sprites/cyphers/level_5_cypher_3.png"
 	]
