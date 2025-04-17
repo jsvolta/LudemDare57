@@ -50,6 +50,8 @@ shadow_color = Color(0, 0, 0, 0)
 shadow_size = 1
 shadow_offset = Vector2(0, 2)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tptjx"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hk5wq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e33h0"]
@@ -61,8 +63,6 @@ corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tptjx"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jnaw2"]
 
@@ -184,49 +184,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_4r6ya")
 
-[node name="CyphersP6" type="PanelContainer" parent="CypherBook/Background"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 4.0
-offset_top = 4.0
-offset_right = -267.0
-offset_bottom = -4.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_hk5wq")
-metadata/_edit_group_ = true
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CypherBook/Background/CyphersP6"]
-layout_mode = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/mono_font = ExtResource("10_4r6ya")
-theme_override_font_sizes/normal_font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_e33h0")
-bbcode_enabled = true
-text = "[code][u]Vigenère Cipher[/u]
-Key: STAR
-
-Each letter is shifted based on the the key
-a = 0 letter shift
-z = 25 letter shift
-
-[table=11]
-[cell]H  [/cell] [cell]E  [/cell] [cell]L  [/cell] [cell]L  [/cell] [cell]O  [/cell]   [cell] [/cell]  [cell]W  [/cell] [cell]O  [/cell] [cell]R  [/cell] [cell]L  [/cell] [cell]D[/cell]
-[cell]S[/cell] [cell]T[/cell] [cell]A[/cell] [cell]R[/cell] [cell]S[/cell]  [cell][/cell]  [cell]T[/cell] [cell]A[/cell] [cell]R[/cell] [cell]S[/cell] [cell]T[/cell]
-[cell]Z[/cell] [cell]X[/cell] [cell]L[/cell] [cell]C[/cell] [cell]G[/cell]  [cell][/cell]  [cell]P[/cell] [cell]O[/cell] [cell]I[/cell] [cell]D[/cell] [cell]W[/cell]
-[/table]
-[/code]
-"
-fit_content = true
-scroll_active = false
-tab_size = 3
-vertical_alignment = 1
-
 [node name="CyphersP7" type="PanelContainer" parent="CypherBook/Background"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -240,17 +198,18 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_tptjx")
 metadata/_edit_group_ = true
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CypherBook/Background/CyphersP7"]
+[node name="RichTextLabel2" type="RichTextLabel" parent="CypherBook/Background/CyphersP7"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("10_4r6ya")
-theme_override_font_sizes/normal_font_size = 20
+theme_override_fonts/mono_font = ExtResource("10_4r6ya")
+theme_override_font_sizes/mono_font_size = 20
 theme_override_styles/normal = ExtResource("4_ye4ph")
 bbcode_enabled = true
-text = "[u]Alphabet Numbers[/u]
+text = "
+[code][u]Alphabet Numbers[/u]
 [table=3]
-[cell]A - 0         [/cell]
-[cell]J - 9         [/cell]
+[cell]A - 0          [/cell]
+[cell]J - 9       	 	 [/cell]
 [cell]S - 18[/cell]
 [cell]B - 1[/cell]
 [cell]K - 10[/cell]
@@ -275,11 +234,51 @@ text = "[u]Alphabet Numbers[/u]
 [cell]Z - 25[/cell]
 [cell]I - 8[/cell]
 [cell]R - 17[/cell]
-[/table]"
+[/table]
+[/code]"
 fit_content = true
 scroll_active = false
 tab_size = 3
-vertical_alignment = 1
+
+[node name="CyphersP6" type="PanelContainer" parent="CypherBook/Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -267.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_hk5wq")
+metadata/_edit_group_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CypherBook/Background/CyphersP6"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/mono_font = ExtResource("10_4r6ya")
+theme_override_font_sizes/mono_font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxFlat_e33h0")
+bbcode_enabled = true
+text = "
+[code][u]Vigenère Cipher[/u]
+Key: STAR
+
+Each letter is shifted based on the the key
+a = 0 letter shift
+z = 25 letter shift
+
+[table=11]
+[cell]H  [/cell] [cell]E  [/cell] [cell]L  [/cell] [cell]L  [/cell] [cell]O  [/cell]   [cell] [/cell]  [cell]W  [/cell] [cell]O  [/cell] [cell]R  [/cell] [cell]L  [/cell] [cell]D[/cell]
+[cell]S[/cell] [cell]T[/cell] [cell]A[/cell] [cell]R[/cell] [cell]S[/cell]  [cell][/cell]  [cell]T[/cell] [cell]A[/cell] [cell]R[/cell] [cell]S[/cell] [cell]T[/cell]
+[cell]Z[/cell] [cell]X[/cell] [cell]L[/cell] [cell]C[/cell] [cell]G[/cell]  [cell][/cell]  [cell]P[/cell] [cell]O[/cell] [cell]I[/cell] [cell]D[/cell] [cell]W[/cell]
+[/table]
+[/code]
+"
+fit_content = true
+scroll_active = false
+tab_size = 3
 
 [node name="CyphersP5" type="Panel" parent="CypherBook/Background"]
 visible = false
@@ -425,7 +424,6 @@ offset_bottom = 73.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_hk5wq")
 
 [node name="CyphersP4" type="PanelContainer" parent="CypherBook/Background"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -443,9 +441,10 @@ metadata/_edit_group_ = true
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("10_4r6ya")
-theme_override_font_sizes/normal_font_size = 16
+theme_override_font_sizes/normal_font_size = 17
 theme_override_styles/normal = SubResource("StyleBoxFlat_e33h0")
-text = "Every little hole's like a peep through the old sewing needle.
+text = "
+Every little hole's like a peep through the old sewing needle.
 
 And each of those scrambled letters? Don't worry, they're secret codes waiting to be discovered.
 
@@ -453,7 +452,6 @@ Together they become stars that fall into place on a clear night."
 fit_content = true
 scroll_active = false
 tab_size = 3
-vertical_alignment = 1
 
 [node name="CyphersP3" type="PanelContainer" parent="CypherBook/Background"]
 visible = false
@@ -473,14 +471,15 @@ metadata/_edit_group_ = true
 [node name="RichTextLabel" type="RichTextLabel" parent="CypherBook/Background/CyphersP3"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("10_4r6ya")
-theme_override_font_sizes/normal_font_size = 20
+theme_override_fonts/mono_font = ExtResource("10_4r6ya")
+theme_override_font_sizes/mono_font_size = 20
 theme_override_styles/normal = ExtResource("4_ye4ph")
 bbcode_enabled = true
-text = "[u]Alphabet Numbers[/u]
+text = "
+[code][u]Alphabet Numbers[/u]
 [table=3]
-[cell]A - 0         [/cell]
-[cell]J - 9         [/cell]
+[cell]A - 0          [/cell]
+[cell]J - 9       	 	 [/cell]
 [cell]S - 18[/cell]
 [cell]B - 1[/cell]
 [cell]K - 10[/cell]
@@ -505,13 +504,14 @@ text = "[u]Alphabet Numbers[/u]
 [cell]Z - 25[/cell]
 [cell]I - 8[/cell]
 [cell]R - 17[/cell]
-[/table]"
+[/table]
+[/code]"
 fit_content = true
 scroll_active = false
 tab_size = 3
-vertical_alignment = 1
 
 [node name="CyphersP2" type="PanelContainer" parent="CypherBook/Background"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -529,20 +529,24 @@ metadata/_edit_group_ = true
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("10_4r6ya")
-theme_override_font_sizes/normal_font_size = 16
+theme_override_fonts/mono_font = ExtResource("10_4r6ya")
+theme_override_font_sizes/mono_font_size = 17
 theme_override_styles/normal = ExtResource("4_ye4ph")
-text = "The Caesar Cipher is a way to hide a message by sliding the alphabet over!
+bbcode_enabled = true
+text = "
+[code][u]Caesar Cipher[/u]
+The Caesar Cipher is a way to hide a message by sliding the alphabet over!
 
 F 	->	A
 G 	->	B
 H 	->	C
 and so on!
 
-It’s like using a secret alphabet that’s just moved over."
+It’s like using a secret alphabet that’s just moved over.
+[/code]"
 fit_content = true
 scroll_active = false
 tab_size = 3
-vertical_alignment = 1
 
 [node name="CyphersP1" type="PanelContainer" parent="CypherBook/Background"]
 visible = false
@@ -563,29 +567,27 @@ metadata/_edit_group_ = true
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/mono_font = ExtResource("10_4r6ya")
-theme_override_font_sizes/mono_font_size = 21
-theme_override_font_sizes/normal_font_size = 7
+theme_override_font_sizes/mono_font_size = 20
 theme_override_styles/normal = ExtResource("4_ye4ph")
 bbcode_enabled = true
-text = "[code][u]Morse Code[/u]
+text = "
+[code][u]Morse Code[/u]
 [table=3]
-[cell]A .-												[/cell]      [cell]B -...									[/cell]     [cell]C -.-.[/cell]
-[cell]D -..[/cell]     [cell]E .[/cell]        [cell]F ..-.[/cell]
-[cell]G --.[/cell]     [cell]H ....[/cell]     [cell]I ..[/cell]
 
-[cell]J .---[/cell]    [cell]K -.-[/cell]      [cell]L .-..[/cell]
-[cell]M --[/cell]      [cell]N -.[/cell]       [cell]O ---[/cell]
-[cell]P .--.[/cell]    [cell]Q --.-[/cell]     [cell]R .-.[/cell]
+[cell]A .-						[/cell]			[cell]J .---					[/cell]			[cell]S ...[/cell]
+[cell]B -...[/cell]			[cell]K -.-[/cell]			[cell]T -[/cell]
+[cell]C -.-.[/cell]			[cell]L .-..[/cell]			[cell]U ..-[/cell]
+[cell]D -..[/cell]			[cell]M --[/cell] 			[cell]V ...-[/cell]
+[cell]E .[/cell]				 [cell]N -.[/cell]			[cell]W .--[/cell]
+[cell]F ..-.[/cell]			[cell]O ---[/cell]			[cell]X -..-[/cell]
+[cell]G --.[/cell]			[cell]P .--.[/cell]			[cell]Y -.--[/cell]
+[cell]H ....[/cell]			[cell]Q --.-[/cell]			[cell]Z --..[/cell]
+[cell]I ..[/cell]				[cell]R .-.[/cell]			
 
-[cell]S ...[/cell]     [cell]T -[/cell]        [cell]U ..-[/cell]
-[cell]V ...-[/cell]    [cell]W .--[/cell]      [cell]X -..-[/cell]
-[cell]Y -.--[/cell]    [cell]Z --..[/cell]
-[/table]
-"
+[/table]"
 fit_content = true
 scroll_active = false
 tab_size = 2
-vertical_alignment = 1
 
 [node name="CyphersInstruction" type="PanelContainer" parent="CypherBook/Background"]
 visible = false
@@ -608,7 +610,8 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("10_4r6ya")
 theme_override_font_sizes/normal_font_size = 16
 theme_override_styles/normal = ExtResource("4_ye4ph")
-text = "The universe is a vast conversation. All you need is the key to listen.
+text = "
+The universe is a vast conversation. All you need is the key to listen.
 
 These decriptions can help you learn something new about the universe.
 
@@ -618,7 +621,6 @@ I hope you're able to find what I lost.
 fit_content = true
 scroll_active = false
 tab_size = 3
-vertical_alignment = 1
 
 [node name="TitleBar" type="Panel" parent="CypherBook/Background"]
 layout_mode = 1
