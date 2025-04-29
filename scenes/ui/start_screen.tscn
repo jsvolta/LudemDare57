@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bqoaewg2xlej4"]
+[gd_scene load_steps=12 format=3 uid="uid://bqoaewg2xlej4"]
 
 [ext_resource type="Script" uid="uid://by1ihi5qnr4mc" path="res://scripts/ui/start_screen.gd" id="1_8k4yt"]
 [ext_resource type="FontFile" uid="uid://cxf2llnuowy87" path="res://addons/google_fonts/Iceberg/Iceberg-Regular.ttf" id="2_7ykc4"]
@@ -11,6 +11,10 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a1ei0"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a3st5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wwlcm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s037r"]
 
 [node name="StartScreen" type="Control"]
 layout_mode = 3
@@ -130,5 +134,30 @@ stream = ExtResource("4_ihgl4")
 volume_db = -12.0
 bus = &"Music"
 
+[node name="HintsButton" type="CheckButton" parent="."]
+layout_mode = 0
+offset_left = 538.0
+offset_top = 448.0
+offset_right = 741.0
+offset_bottom = 496.0
+theme_override_fonts/font = ExtResource("2_7ykc4")
+theme_override_font_sizes/font_size = 26
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wwlcm")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_s037r")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HintsButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -69.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_7ykc4")
+theme_override_font_sizes/normal_font_size = 28
+text = "Hard Mode"
+vertical_alignment = 1
+
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="HintsButton" to="." method="_on_hints_button_pressed"]

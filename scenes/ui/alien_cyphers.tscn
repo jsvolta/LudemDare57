@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bq7cg10rfcxcf"]
+[gd_scene load_steps=6 format=3 uid="uid://bq7cg10rfcxcf"]
 
 [ext_resource type="Script" uid="uid://b3qvnprk4hcr8" path="res://scripts/alien_cyphers.gd" id="1_lbpqt"]
 [ext_resource type="Texture2D" uid="uid://n5rfbowmoa22" path="res://assets/sprites/cyphers/level_1_cypher_1.png" id="2_pdp6h"]
@@ -7,6 +7,13 @@
 texture = ExtResource("2_pdp6h")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pdp6h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pdp6h"]
+bg_color = Color(0, 0.521569, 0.109804, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
 
 [node name="AlienCyphers" type="Control"]
 layout_mode = 3
@@ -37,6 +44,32 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1, 0.035)
 theme_override_styles/panel = SubResource("StyleBoxEmpty_pdp6h")
+
+[node name="Hint1" type="Panel" parent="CypherPage"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 310.0
+offset_top = 168.0
+offset_right = -20.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pdp6h")
+
+[node name="Hint2" type="Panel" parent="CypherPage"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 324.0
+offset_top = 168.0
+offset_right = -6.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pdp6h")
 
 [connection signal="mouse_entered" from="CypherPage/DraggableArea" to="." method="_on_draggable_area_mouse_entered"]
 [connection signal="mouse_exited" from="CypherPage/DraggableArea" to="." method="_on_draggable_area_mouse_exited"]

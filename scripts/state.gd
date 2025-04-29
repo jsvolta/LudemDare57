@@ -103,6 +103,7 @@ var level_index: int = 1
 var max_level: int = 5
 var communication_range: float = 1.384
 var volume_slider_value: float = 0.5
+var game_has_hints: bool = false
 
 func _ready() -> void:
 	self.level_data.shuffle();

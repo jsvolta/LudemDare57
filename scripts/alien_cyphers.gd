@@ -2,6 +2,11 @@ extends Control
 
 var current_level = State.level_index
 
+#Game Hints
+var game_has_hints = State.game_has_hints
+var bg_colour_1: Color
+var bg_colour_2: Color
+
 # Moving the sheet
 var mouse_in_title := false
 var drag_offset := Vector2.ZERO
@@ -15,6 +20,7 @@ var panel_size := Vector2()
 
 func _ready() -> void:
 	hide()
+	$CypherPage/Hint2.visible = false
 
 # Moving the book
 func _input(event):
@@ -54,3 +60,22 @@ func _on_main_scene_cypher_changed(image_path:String) -> void:
 	var style_box: StyleBoxTexture = image_panel.get_theme_stylebox("panel")
 	style_box.texture = load(image_path)
 	image_panel.add_theme_stylebox_override("panel", style_box)
+	
+	# Hints
+	$CypherPage/Hint2.visible = false
+	var style = StyleBoxFlat.new()
+	
+	if game_has_hints:
+		match current_level:
+			1:
+				bg_colour_1 = Color(0, 0.439, 0.753)
+			2:
+				bg_colour_1 = Color(0, 0.522, 0.11)
+			3:
+				bg_colour_1 = Color(0, 0.533, 0.412)
+			4:
+				bg_colour_1 = Color(0, 0.439, 0.753)
+			5:
+				bg_colour_1 = Color(0.78, 0, 0.396)
+		style.bg_color = bg_colour_1
+		self.add_theme_stylebox_override("$CypherPage/Hint1", style)
