@@ -14,6 +14,7 @@ var panel_size := Vector2()
 
 func _ready():
 	visible = false
+	$"../CypherCutout".visible = false
 	pages = [
 		[	#0
 			$Background/CyphersInstruction,		#0 - General instructions of the book's purpose
@@ -39,6 +40,10 @@ func _show_page(page_index: int) -> void:
 		else:
 			pages[i][0].visible = false
 			pages[i][1].visible = false
+	if pages[2][1].visible:
+		$Background/CypherButton.visible = true
+	else:
+		$Background/CypherButton.visible = false
 
 func _on_open_book_pressed() -> void:
 	visible = true
@@ -92,3 +97,8 @@ func _on_title_bar_mouse_exited() -> void:
 
 func _on_close_book_pressed() -> void:
 	self.visible = false
+
+func _on_cutout_cypher_pressed() -> void:
+	$Background/CypherButton.visible = false
+	$Background/CyphersP5/CypherCutoutBook.visible = false
+	$"../CypherCutout".visible = true
