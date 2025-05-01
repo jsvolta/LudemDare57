@@ -31,6 +31,12 @@ func _ready():
 		]
 	]
 	_show_page(current_page)
+	
+	if !State.game_has_hints:
+		$Background/CyphersP1/PageHint.visible = false
+		$Background/CyphersP3/PageHint.visible = false
+		$Background/CyphersP5/PageHint.visible = false
+		$Background/CyphersP7/PageHint.visible = false
 
 func _show_page(page_index: int) -> void:
 	for i in range(pages.size()):

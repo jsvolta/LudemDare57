@@ -9,7 +9,7 @@ texture = ExtResource("2_pdp6h")
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pdp6h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pdp6h"]
-bg_color = Color(0, 0.521569, 0.109804, 1)
+bg_color = Color(0, 0.439, 0.753, 1)
 corner_radius_top_left = 3
 corner_radius_top_right = 3
 corner_radius_bottom_right = 3
@@ -22,8 +22,8 @@ script = ExtResource("1_lbpqt")
 
 [node name="CypherPage" type="Control" parent="."]
 anchors_preset = 0
-offset_right = 340.0
-offset_bottom = 183.0
+offset_right = 372.0
+offset_bottom = 200.0
 
 [node name="Panel" type="Panel" parent="CypherPage"]
 layout_mode = 1
@@ -50,10 +50,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 310.0
-offset_top = 168.0
-offset_right = -20.0
-offset_bottom = -5.0
+offset_left = 352.0
+offset_top = 7.0
+offset_right = -6.0
+offset_bottom = -180.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_pdp6h")
@@ -63,10 +63,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 324.0
-offset_top = 168.0
-offset_right = -6.0
-offset_bottom = -5.0
+offset_left = 333.0
+offset_top = 7.0
+offset_right = -25.0
+offset_bottom = -180.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_pdp6h")

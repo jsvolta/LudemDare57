@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://ctpcp4jhcv4be" path="res://scenes/ui/options_menu.tscn" id="7_c16ls"]
 [ext_resource type="AudioStream" uid="uid://cqh52eyvt0weu" path="res://assets/music/start_menu.wav" id="8_18nlu"]
 [ext_resource type="FontFile" uid="uid://bnl2tsb2chuqu" path="res://addons/google_fonts/VT323/VT323-Regular.ttf" id="9_e1cbu"]
-[ext_resource type="Script" uid="uid://bv11w867s6ndn" path="res://scripts/ui/range_text.gd" id="10_mngbo"]
+[ext_resource type="Script" path="res://scripts/ui/range_text.gd" id="10_mngbo"]
 [ext_resource type="PackedScene" uid="uid://b04slc5q1mn10" path="res://scenes/sprites/toaster.tscn" id="11_4w45t"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4w45t"]

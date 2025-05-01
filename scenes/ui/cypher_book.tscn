@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://dkyrv4q16lrvq"]
+[gd_scene load_steps=45 format=3 uid="uid://dkyrv4q16lrvq"]
 
 [ext_resource type="Texture2D" uid="uid://dbchabqfp8ipr" path="res://assets/sprites/book_hover.png" id="1_niwfc"]
 [ext_resource type="Texture2D" uid="uid://bqraegcbuce7g" path="res://assets/sprites/book_pressed.png" id="1_oxjdx"]
@@ -51,6 +51,13 @@ shadow_offset = Vector2(0, 2)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tptjx"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ikmdk"]
+bg_color = Color(0.78, 0, 0.396, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hk5wq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e33h0"]
@@ -73,9 +80,30 @@ corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tptjx"]
+bg_color = Color(0.594863, 0.53015, 1.54018e-06, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hk5wq"]
+bg_color = Color(0, 0.439, 0.753, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0lamr"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ikmdk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0lamr"]
+bg_color = Color(0, 0.522, 0.11, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a210j"]
 
@@ -193,7 +221,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_4r6ya")
 
-[node name="CyphersP7" type="PanelContainer" parent="CypherBook/Background"]
+[node name="CyphersP7" type="Panel" parent="CypherBook/Background"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -209,6 +237,8 @@ metadata/_edit_group_ = true
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="CypherBook/Background/CyphersP7"]
 layout_mode = 2
+offset_right = 253.0
+offset_bottom = 324.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/mono_font = ExtResource("10_4r6ya")
 theme_override_font_sizes/mono_font_size = 20
@@ -248,6 +278,13 @@ text = "
 fit_content = true
 scroll_active = false
 tab_size = 3
+
+[node name="PageHint" type="Panel" parent="CypherBook/Background/CyphersP7"]
+offset_left = 229.0
+offset_top = 10.0
+offset_right = 243.0
+offset_bottom = 24.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ikmdk")
 
 [node name="CyphersP6" type="PanelContainer" parent="CypherBook/Background"]
 layout_mode = 1
@@ -290,6 +327,7 @@ scroll_active = false
 tab_size = 3
 
 [node name="CyphersP5" type="Panel" parent="CypherBook/Background"]
+visible = false
 visibility_layer = 2
 layout_mode = 1
 anchors_preset = 15
@@ -336,6 +374,13 @@ offset_bottom = 97.0
 rotation = -0.840711
 theme_override_styles/panel = SubResource("StyleBoxFlat_ye4ph")
 
+[node name="PageHint" type="Panel" parent="CypherBook/Background/CyphersP5"]
+offset_left = 229.0
+offset_top = 10.0
+offset_right = 243.0
+offset_bottom = 24.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tptjx")
+
 [node name="CyphersP4" type="PanelContainer" parent="CypherBook/Background"]
 layout_mode = 1
 anchors_preset = 15
@@ -366,7 +411,7 @@ fit_content = true
 scroll_active = false
 tab_size = 3
 
-[node name="CyphersP3" type="PanelContainer" parent="CypherBook/Background"]
+[node name="CyphersP3" type="Panel" parent="CypherBook/Background"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -383,6 +428,8 @@ metadata/_edit_group_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CypherBook/Background/CyphersP3"]
 layout_mode = 2
+offset_right = 253.0
+offset_bottom = 324.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/mono_font = ExtResource("10_4r6ya")
 theme_override_font_sizes/mono_font_size = 20
@@ -423,6 +470,13 @@ fit_content = true
 scroll_active = false
 tab_size = 3
 
+[node name="PageHint" type="Panel" parent="CypherBook/Background/CyphersP3"]
+offset_left = 229.0
+offset_top = 10.0
+offset_right = 243.0
+offset_bottom = 24.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hk5wq")
+
 [node name="CyphersP2" type="PanelContainer" parent="CypherBook/Background"]
 layout_mode = 1
 anchors_preset = 15
@@ -460,7 +514,7 @@ fit_content = true
 scroll_active = false
 tab_size = 3
 
-[node name="CyphersP1" type="PanelContainer" parent="CypherBook/Background"]
+[node name="CyphersP1" type="Panel" parent="CypherBook/Background"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -477,6 +531,8 @@ metadata/_edit_group_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CypherBook/Background/CyphersP1"]
 layout_mode = 2
+offset_right = 253.0
+offset_bottom = 324.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/mono_font = ExtResource("10_4r6ya")
 theme_override_font_sizes/mono_font_size = 20
@@ -500,6 +556,14 @@ text = "
 fit_content = true
 scroll_active = false
 tab_size = 2
+
+[node name="PageHint" type="Panel" parent="CypherBook/Background/CyphersP1"]
+layout_mode = 2
+offset_left = 229.0
+offset_top = 10.0
+offset_right = 243.0
+offset_bottom = 24.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0lamr")
 
 [node name="CyphersInstruction" type="PanelContainer" parent="CypherBook/Background"]
 layout_mode = 1
@@ -559,6 +623,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_ye4ph")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ygn38")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jnaw2")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_x2asx")
+metadata/_edit_lock_ = true
 
 [node name="NextPage" type="Panel" parent="CypherBook/Background"]
 layout_mode = 1
@@ -664,8 +729,8 @@ vertical_alignment = 1
 layout_mode = 1
 offset_left = 411.0
 offset_top = -257.0
-offset_right = 1583.0
-offset_bottom = 951.0
+offset_right = 1625.0
+offset_bottom = 994.0
 scale = Vector2(0.165548, 0.165548)
 theme_override_styles/panel = SubResource("StyleBoxTexture_jnaw2")
 script = ExtResource("5_ygn38")

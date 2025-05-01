@@ -20,7 +20,6 @@ var panel_size := Vector2()
 
 func _ready() -> void:
 	hide()
-	$CypherPage/Hint2.visible = false
 
 # Moving the book
 func _input(event):
@@ -57,25 +56,50 @@ func _on_draggable_area_mouse_exited() -> void:
 
 
 func _on_main_scene_cypher_changed(image_path:String) -> void:
+	#Changing cypher images
 	var style_box: StyleBoxTexture = image_panel.get_theme_stylebox("panel")
 	style_box.texture = load(image_path)
 	image_panel.add_theme_stylebox_override("panel", style_box)
 	
-	# Hints
-	$CypherPage/Hint2.visible = false
-	var style = StyleBoxFlat.new()
-	
+	#Updating the hint
 	if game_has_hints:
+		$CypherPage/Hint1.visible = true
+		$CypherPage/Hint2.visible = false
+		current_level = State.level_index
 		match current_level:
 			1:
-				bg_colour_1 = Color(0, 0.439, 0.753)
+				change_hint1_color(Color(0, 0.439, 0.753))
 			2:
-				bg_colour_1 = Color(0, 0.522, 0.11)
+				change_hint1_color(Color(0, 0.522, 0.11))
 			3:
-				bg_colour_1 = Color(0, 0.533, 0.412)
+				change_hint1_color(Color(0.595, 0.53, 0))
 			4:
-				bg_colour_1 = Color(0, 0.439, 0.753)
+				change_hint1_color(Color(0, 0.439, 0.753))
+				change_hint2_color(Color(0, 0.522, 0.11))
 			5:
-				bg_colour_1 = Color(0.78, 0, 0.396)
-		style.bg_color = bg_colour_1
-		self.add_theme_stylebox_override("$CypherPage/Hint1", style)
+				change_hint1_color(Color(0.78, 0, 0.396))
+	else:
+		$CypherPage/Hint1.visible = false
+		$CypherPage/Hint2.visible = false
+
+
+func change_hint1_color(new_color: Color) -> void:
+	var panel = $CypherPage/Hint1
+	var style = StyleBoxFlat.new()
+	style.bg_color = new_color
+	style.corner_radius_bottom_left = 3
+	style.corner_radius_bottom_right = 3
+	style.corner_radius_top_left = 3
+	style.corner_radius_top_right = 3
+	panel.add_theme_stylebox_override("panel", style)
+
+func change_hint2_color(new_color: Color) -> void:
+	var panel = $CypherPage/Hint2
+	var style = StyleBoxFlat.new()
+	$CypherPage/Hint2.visible = true
+	style.bg_color = new_color
+	style.corner_radius_bottom_left = 3
+	style.corner_radius_bottom_right = 3
+	style.corner_radius_top_left = 3
+	style.corner_radius_top_right = 3
+	panel.add_theme_stylebox_override("panel", style)
